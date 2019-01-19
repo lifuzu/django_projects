@@ -8,6 +8,12 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+coverage = "coverage run --source='.' manage.py test"
+cov_html = "coverage html"
+cov_report = "coverage report"
