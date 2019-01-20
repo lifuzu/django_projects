@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # enable rest framework
+    'rest_framework',
     'leads',
 ]
 

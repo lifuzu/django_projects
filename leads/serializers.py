@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from leads.models import leads
+from leads.models import Lead
 
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
