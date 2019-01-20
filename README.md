@@ -25,3 +25,12 @@ $ python manage.py loaddata leads
 $ npm run dev
 $ python manage.py runserver
 ```
+
+### Run the UI test with Cypress
+```
+# Terminal #1
+$ pipenv run python manage.py runserver
+
+# Terminal #2
+$ npm run e2e
+```

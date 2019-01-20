@@ -10,6 +10,7 @@ describe("Django REST framework / React quickstart app", () => {
   });
   it("should be able to fill a web form", () => {
     cy.visit("/");
+    // cy.get("tr").contains(`${lead.name}${lead.email}${lead.message}`);
     cy
       .get('input[name="name"]')
       .type(lead.name)
