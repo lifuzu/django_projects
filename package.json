@@ -1,0 +1,25 @@
+{
+  "name": "django_projects",
+  "version": "1.0.0",
+  "description": "https://www.valentinog.com/blog/tutorial-api-django-rest-react/",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development ./projects/frontend/src/index.js --output ./projects/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./projects/frontend/src/index.js --output ./projects/frontend/static/frontend/main.js"
+  },
+  "keywords": [],
+  "author": "Richard Li <lifuzu@gmail.com> (http://lifuzu.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}
