@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # enable rest framework
     'rest_framework',
     'leads',
+    'frontend',
 ]
 
 MIDDLEWARE = [

@@ -21,6 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# api
 urlpatterns += [
     path('', include('leads.urls')),
+]
+
+# frontend
+urlpatterns += [
+    path('', include('frontend.urls')),
 ]
