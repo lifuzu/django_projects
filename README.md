@@ -1,4 +1,17 @@
 
+### Create retries Django app
+```
+# Make sure you're in pipenv shell by running `pipenv shell`
+(django_projects) bash-3.2$ python manage.py startapp retries
+
+# Install Postgres server, psycopg2-binary dep (in Pipenv), refer to:
+https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/
+
+# Create database migrations
+(django_projects) bash-3.2$ python manage.py makemigrations retries
+(django_projects) bash-3.2$ python manage.py migrate
+```
+
 
 ### Learning with following:
 https://www.valentinog.com/blog/tutorial-api-django-rest-react/
@@ -11,7 +24,7 @@ $ pipenv run cov_report
 
 ### Migrate database
 ```
-$ python manage.py makemigration
+$ python manage.py makemigrations <app>
 $ python manage.py migrate
 ```
 
