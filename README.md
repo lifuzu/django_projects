@@ -14,6 +14,9 @@ https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/
 # Rerun the test coverage, and then create a report
 (django_projects) bash-3.2$ pipenv run coverage
 (django_projects) bash-3.2$ pipenv run cov_report
+
+# Seeding reties database
+(django_projects) bash-3.2$ python manage.py loaddata retries
 ```
 
 

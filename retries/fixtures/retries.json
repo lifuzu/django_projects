@@ -1,0 +1,28 @@
+[
+    {
+        "model": "retries.retry",
+        "pk": 1,
+        "fields": {
+            "status": "Failed",
+            "caused_by": "Something 502",
+            "job_url": "https://hello.com/job/hello_world",
+            "job_params": "{'A':'a', 'B': 'b'}",
+            "fallback_email": "something@gmail.com",
+            "created_at": "2018-02-14 00:00:00",
+            "updated_at": "2018-02-14 00:00:00"
+        }
+    },
+    {
+        "model": "retries.retry",
+        "pk": 3,
+        "fields": {
+            "status": "Failed",
+            "caused_by": "Something 503",
+            "job_url": "https://hello.com/job/hello_world_2",
+            "job_params": "{'C':'c', 'D': 'd'}",
+            "fallback_email": "tomsomething@gmail.com",
+            "created_at": "2018-01-14 00:00:00",
+            "updated_at": "2018-02-14 00:00:00"
+        }
+    }
+]
