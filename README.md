@@ -10,6 +10,10 @@ https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/
 # Create database migrations
 (django_projects) bash-3.2$ python manage.py makemigrations retries
 (django_projects) bash-3.2$ python manage.py migrate
+
+# Rerun the test coverage, and then create a report
+(django_projects) bash-3.2$ pipenv run coverage
+(django_projects) bash-3.2$ pipenv run cov_report
 ```
 
 
