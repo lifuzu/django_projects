@@ -63,3 +63,9 @@ https://www.revsys.com/tidbits/celery-and-django-and-docker-oh-my/
 (django_projects) bash-3.2$ pipenv install celery
 (django_projects) bash-3.2$ pipenv install redis
 ```
+
+### Run Celery tasks (with local redis server supported)
+```
+(django_projects) bash-3.2$ celery -A projects worker -l=info
+```
+```
