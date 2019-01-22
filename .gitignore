@@ -1,5 +1,6 @@
 htmlcov
 .coverage
 node_modules/
+static/
 
 dump.rdb

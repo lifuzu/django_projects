@@ -125,3 +125,9 @@ $ (django_projects) bash-3.2$ gunicorn --bind unix:///tmp/rlee.local.com.socket 
 #  7. Open rlee.local.com/api/retry in a browser to verify Ngnix
 NOTE: no static file(s) ready yet
 ```
+
+### Setting up static resource folder
+```
+# Config STATIC_ROOT in settings.py, then
+$ (django_projects) bash-3.2$ python manage.py collectstatic --no-input
+```
