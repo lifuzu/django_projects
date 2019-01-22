@@ -25,7 +25,7 @@ SECRET_KEY = 's^!1td3p*3a^gg!*1g9m&obq!aa=%(qz^go@uo&rlbo_(w^-*n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rlee.local.com']
 
 
 # Application definition

@@ -85,3 +85,43 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/gunicorn/
 (django_projects) bash-3.2$ pipenv install gunicorn
 (django_projects) bash-3.2$ gunicorn projects.wsgi
 ```
+
+### Install/config/run Nginx
+https://gist.github.com/netpoetica/5879685
+```
+# Install Nginx on Mac with brew
+$ brew install nginx
+
+# Run Nginx
+$ ngnix
+
+# Stop Ngnix
+$ ngnix -s stop
+
+# Config Ngnix:
+#  1. Backup before making change(s)
+$ cp /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf.bak
+
+#  2. Create a site config file
+$ touch /usr/local/etc/nginx/servers/rlee.local.com.conf
+
+#  3. Copy the Ngnix template
+$ cp tools/deployment/nginx.template.conf /usr/local/etc/nginx/servers/rlee.local.com.conf
+
+#  4. Replace the DOMAIN to e.g. rlee.local.com
+$ $ sed -i.bak "s/DOMAIN/rlee.local.com/g" /usr/local/etc/nginx/servers/rlee.local.com.conf
+
+#  5. Edit hosts
+`
+$ sudo vim /private/etc/hosts
+...
+# Setting Ngnix
+127.0.0.1       rlee.local.com
+`
+
+#  6. Start the backing Django service
+$ (django_projects) bash-3.2$ gunicorn --bind unix:///tmp/rlee.local.com.socket projects.wsgi:application
+
+#  7. Open rlee.local.com/api/retry in a browser to verify Ngnix
+NOTE: no static file(s) ready yet
+```
