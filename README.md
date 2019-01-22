@@ -78,3 +78,10 @@ https://flower.readthedocs.io/en/latest/index.html
 ```
 (django_projects) bash-3.2$ flower -A projects --port=5555
 ```
+
+### Install/run Gunicorn
+https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/gunicorn/
+```
+(django_projects) bash-3.2$ pipenv install gunicorn
+(django_projects) bash-3.2$ gunicorn projects.wsgi
+```
