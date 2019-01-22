@@ -20,7 +20,7 @@ https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/
 ```
 
 
-### Learning with following:
+## Learning with following:
 https://www.valentinog.com/blog/tutorial-api-django-rest-react/
 
 ### Start coverage
@@ -53,4 +53,13 @@ $ pipenv run python manage.py runserver
 
 # Terminal #2
 $ npm run e2e
+```
+
+## Learning from following
+https://www.revsys.com/tidbits/celery-and-django-and-docker-oh-my/
+
+### Install deps (Celery, Redis)
+```
+(django_projects) bash-3.2$ pipenv install celery
+(django_projects) bash-3.2$ pipenv install redis
 ```

@@ -10,6 +10,8 @@ django = "*"
 djangorestframework = "*"
 coverage = "*"
 psycopg2-binary = "*"
+celery = "*"
+redis = "*"
 
 [requires]
 python_version = "3.7"
