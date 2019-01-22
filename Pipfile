@@ -12,6 +12,7 @@ coverage = "*"
 psycopg2-binary = "*"
 celery = "*"
 redis = "*"
+flower = "*"
 
 [requires]
 python_version = "3.7"
