@@ -26,9 +26,10 @@ $ DEPLOY_HOME=/home/${DEPLOY_USER}/sites/${DOMAIN_NAME}
 
 $ cp tools/templates/supervisord.template.conf /etc/supervisor/conf.d/supervisord.conf
 
-$ sed -i.bak 's/DOMAIN/${DOMAIN_NAME}/g' /etc/supervisor/conf.d/supervisord.conf
-$ sed -i.bak 's/DEPLOY_HOME/${DEPLOY_HOME}/g' /etc/supervisor/conf.d/supervisord.conf
-$ sed -i.bak 's/DEPLOY_USER/${DEPLOY_USER}/g' /etc/supervisor/conf.d/supervisord.conf
+$ sed -i.bak "s/DOMAIN/${DOMAIN_NAME}/g" /etc/supervisor/conf.d/supervisord.conf
+$ sed -i.bak "s|DEPLOY_HOME|${DEPLOY_HOME}|g" /etc/supervisor/conf.d/supervisord.conf
+$ sed -i.bak "s/DEPLOY_USER/${DEPLOY_USER}/g" /etc/supervisor/conf.d/supervisord.conf
+$ rm /etc/supervisor/conf.d/supervisord.conf.bak
 ```
 
 ### Start the supervisor daemon
