@@ -37,6 +37,8 @@ $ rm /etc/supervisor/conf.d/supervisord.conf.bak
 $ supervisorctl start projects
 $ supervisorctl start celery
 $ supervisorctl start flower
+# OR
+$ supervisorctl start all
 ```
 
 ### TODO: Install / launch Redis

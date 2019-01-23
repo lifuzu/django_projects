@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+    <key>Label</key>
+    <string>REVERSE_DOMAIN.supervisord</string>
+    <key>WorkingDirectory</key>
+    <string>DEPLOY_HOME</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>pipenv run supervisord</string>
+        <string>-n</string>
+        <string>-c</string>
+        <string>CONFIG_HOME/supervisor/supervisord.conf</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
