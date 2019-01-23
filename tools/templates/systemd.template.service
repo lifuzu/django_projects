@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=DEPLOY_USER
+WorkingDirectory=DEPLOY_HOME
+EnvironmentFile=DEPLOY_HOME/.env
+
+ExecStart=DEPLOY_HOME/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/DOMAIN.socket \
+    projects.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

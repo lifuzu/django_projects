@@ -11,22 +11,32 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+from pathlib import Path
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+ENV_PATH = os.path.join( Path('.'), '.env')
+load_dotenv(dotenv_path=ENV_PATH)
+
+# For server deployment, HOST_ENV should exists
+HOST_ENV = os.path.join('/usr/local/etc', os.getenv('DOMAIN_NAME'), '.env')
+# If HOST_ENV exists, reload the HOST_ENV to overwrite/extend ENV variable(s)
+if Path(HOST_ENV).is_file():
+    load_dotenv(dotenv_path=HOST_ENV)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's^!1td3p*3a^gg!*1g9m&obq!aa=%(qz^go@uo&rlbo_(w^-*n'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['rlee.local.com']
-
+ALLOWED_HOSTS = [os.getenv("SITENAME")]
 
 # Application definition
 
