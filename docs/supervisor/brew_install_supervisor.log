@@ -1,0 +1,225 @@
+$ brew install supervisor
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+bluetoothconnector                         dmg2img                                    grpcurl
+==> Updated Formulae
+basex             gmsh              kubernetes-helm   modd              quex              swiftlint         wireguard-tools
+bash              graph-tool        libbi             mplayer           root              telegraf          youtube-dl
+chronograf        gtk+3             librsvg           nuxeo             safe              topgrade
+coreutils         i2pd              libvterm          percona-server    ship              vala
+git-fresh         iamy              libxml2           platformio        siril             vault
+gitlab-runner     jenv              mas               puzzles           swiftformat       vim
+==> Deleted Formulae
+liblastfm                                                        percona-server@5.6
+
+==> Installing dependencies for supervisor: readline, sqlite, python, sphinx-doc and python@2
+==> Installing supervisor dependency: readline
+==> Downloading https://homebrew.bintray.com/bottles/readline-8.0.0.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring readline-8.0.0.mojave.bottle.tar.gz
+==> Caveats
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+For pkg-config to find readline you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+
+==> Summary
+🍺  /usr/local/Cellar/readline/8.0.0: 48 files, 1.5MB
+==> Installing supervisor dependency: sqlite
+==> Downloading https://homebrew.bintray.com/bottles/sqlite-3.26.0_1.mojave.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring sqlite-3.26.0_1.mojave.bottle.1.tar.gz
+==> Caveats
+sqlite is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides an older sqlite3.
+
+If you need to have sqlite first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find sqlite you may need to set:
+  export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+  export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+For pkg-config to find sqlite you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+
+==> Summary
+🍺  /usr/local/Cellar/sqlite/3.26.0_1: 11 files, 3.7MB
+==> Installing supervisor dependency: python
+Warning: Building python from source:
+  The bottle needs the Apple Command Line Tools to be installed.
+  You can install them, if desired, with:
+    xcode-select --install
+
+==> Downloading https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
+######################################################################## 100.0%
+==> ./configure --prefix=/usr/local/Cellar/python/3.7.2_1 --enable-ipv6 --datarootdir=/usr/local/Cellar/python/3.7.2_1/share --d
+==> make
+==> make install PYTHONAPPSDIR=/usr/local/Cellar/python/3.7.2_1
+==> make frameworkinstallextras PYTHONAPPSDIR=/usr/local/Cellar/python/3.7.2_1/share/python
+==> Downloading https://files.pythonhosted.org/packages/37/1b/b25507861991beeade31473868463dad0e58b1978c209de27384ae541b0b/setup
+######################################################################## 100.0%
+==> Downloading https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-1
+Already downloaded: /Users/rlee/Library/Caches/Homebrew/downloads/49675dad98271e4b941f60d10b32b309d3d0a8133fc6f779c65eb050e19f4f84--pip-18.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d8/55/221a530d66bf78e72996453d1e2dedef526063546e131d70bed548d80588/wheel
+######################################################################## 100.0%
+==> /usr/local/Cellar/python/3.7.2_1/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/loca
+==> /usr/local/Cellar/python/3.7.2_1/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/loca
+==> /usr/local/Cellar/python/3.7.2_1/bin/python3 -s setup.py --no-user-cfg install --force --verbose --install-scripts=/usr/loca
+==> Caveats
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /usr/local/Cellar/python/3.7.2_1: 8,437 files, 118MB, built in 4 minutes 46 seconds
+==> Installing supervisor dependency: sphinx-doc
+==> Downloading https://homebrew.bintray.com/bottles/sphinx-doc-1.8.3_1.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring sphinx-doc-1.8.3_1.mojave.bottle.tar.gz
+==> Caveats
+sphinx-doc is keg-only, which means it was not symlinked into /usr/local,
+because this formula is mainly used internally by other formulae.
+Users are advised to use `pip` to install sphinx-doc.
+
+If you need to have sphinx-doc first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"' >> ~/.bash_profile
+
+==> Summary
+🍺  /usr/local/Cellar/sphinx-doc/1.8.3_1: 3,118 files, 50.6MB
+==> Installing supervisor dependency: python@2
+Warning: Building python@2 from source:
+  The bottle needs the Apple Command Line Tools to be installed.
+  You can install them, if desired, with:
+    xcode-select --install
+
+==> Downloading https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz
+Already downloaded: /Users/rlee/Library/Caches/Homebrew/downloads/f640fd480ee42d283a98e8e783f14189d6e62323c65f0a098f215eca8319a738--Python-2.7.15.tar.xz
+==> ./configure --prefix=/usr/local/Cellar/python@2/2.7.15_2 --enable-ipv6 --datarootdir=/usr/local/Cellar/python@2/2.7.15_2/sha
+==> make
+==> make install PYTHONAPPSDIR=/usr/local/Cellar/python@2/2.7.15_2
+==> make frameworkinstallextras PYTHONAPPSDIR=/usr/local/Cellar/python@2/2.7.15_2/share/python@2
+==> Downloading https://files.pythonhosted.org/packages/37/1b/b25507861991beeade31473868463dad0e58b1978c209de27384ae541b0b/setup
+Already downloaded: /Users/rlee/Library/Caches/Homebrew/downloads/db35d64db50c77fd8d1c71a34dea53793212ff10926cce3996211152a2be6077--setuptools-40.6.3.zip
+==> Downloading https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-1
+Already downloaded: /Users/rlee/Library/Caches/Homebrew/downloads/49675dad98271e4b941f60d10b32b309d3d0a8133fc6f779c65eb050e19f4f84--pip-18.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d8/55/221a530d66bf78e72996453d1e2dedef526063546e131d70bed548d80588/wheel
+Already downloaded: /Users/rlee/Library/Caches/Homebrew/downloads/67e874601fa70fac6ed5e2bd91f7a9d719609be2b09874b79b0b2a11b90028dc--wheel-0.32.3.tar.gz
+==> make html
+==> /usr/local/Cellar/python@2/2.7.15_2/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-external
+==> /usr/local/Cellar/python@2/2.7.15_2/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-external
+==> /usr/local/Cellar/python@2/2.7.15_2/bin/python -s setup.py --no-user-cfg install --force --verbose --single-version-external
+==> Caveats
+Pip and setuptools have been installed. To update them
+  pip install --upgrade pip setuptools
+
+You can install Python packages with
+  pip install <package>
+
+They will install into the site-package directory
+  /usr/local/lib/python2.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /usr/local/Cellar/python@2/2.7.15_2: 7,536 files, 122.4MB, built in 6 minutes 14 seconds
+==> Installing supervisor
+==> Downloading https://homebrew.bintray.com/bottles/supervisor-3.3.5.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring supervisor-3.3.5.mojave.bottle.tar.gz
+==> Caveats
+To have launchd start supervisor now and restart at login:
+  brew services start supervisor
+Or, if you don't want/need a background service you can just run:
+  supervisord -c /usr/local/etc/supervisord.ini
+==> Summary
+🍺  /usr/local/Cellar/supervisor/3.3.5: 586 files, 7.2MB
+==> Caveats
+==> readline
+readline is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+For compilers to find readline you may need to set:
+  export LDFLAGS="-L/usr/local/opt/readline/lib"
+  export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+For pkg-config to find readline you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+
+==> sqlite
+sqlite is keg-only, which means it was not symlinked into /usr/local,
+because macOS provides an older sqlite3.
+
+If you need to have sqlite first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find sqlite you may need to set:
+  export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+  export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+For pkg-config to find sqlite you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+
+==> python
+Python has been installed as
+  /usr/local/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> sphinx-doc
+sphinx-doc is keg-only, which means it was not symlinked into /usr/local,
+because this formula is mainly used internally by other formulae.
+Users are advised to use `pip` to install sphinx-doc.
+
+If you need to have sphinx-doc first in your PATH run:
+  echo 'export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"' >> ~/.bash_profile
+
+==> python@2
+Pip and setuptools have been installed. To update them
+  pip install --upgrade pip setuptools
+
+You can install Python packages with
+  pip install <package>
+
+They will install into the site-package directory
+  /usr/local/lib/python2.7/site-packages
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> supervisor
+To have launchd start supervisor now and restart at login:
+  brew services start supervisor
+Or, if you don't want/need a background service you can just run:
+  supervisord -c /usr/local/etc/supervisord.ini

@@ -1,6 +1,5 @@
 # Install Supervisor on Ubuntu 16.04
 
-
 ```
 root@ubuntu-s-1vcpu-1gb-sfo2-01:~# apt-get update
 Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
@@ -30,6 +29,26 @@ $ sed -i.bak "s/DOMAIN/${DOMAIN_NAME}/g" /etc/supervisor/conf.d/supervisord.conf
 $ sed -i.bak "s|DEPLOY_HOME|${DEPLOY_HOME}|g" /etc/supervisor/conf.d/supervisord.conf
 $ sed -i.bak "s/DEPLOY_USER/${DEPLOY_USER}/g" /etc/supervisor/conf.d/supervisord.conf
 $ rm /etc/supervisor/conf.d/supervisord.conf.bak
+```
+
+### Install Supervisor on MacOS
+```
+$ brew install supervisor
+
+# Edit to uncomment the below two lines
+# /usr/local/etc/supervisord.ini
+# TODO:
+;[inet_http_server]         ; inet (TCP) server disabled by default
+;port=127.0.0.1:9001        ; ip_address:port specifier, *:port for all iface
+
+# Copy the template and edit
+# /usr/local/etc/supervisor.d/rili.local.com.ini
+
+# Start
+$ pipenv run supervisord -n -c /usr/local/etc/supervisord.ini
+
+# Reload
+$ pipenv run supervisorctl -c /usr/local/etc/supervisord.ini reload
 ```
 
 ### Start the supervisor daemon

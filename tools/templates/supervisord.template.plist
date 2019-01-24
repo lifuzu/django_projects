@@ -13,7 +13,7 @@
     <string>DEPLOY_HOME</string>
     <key>ProgramArguments</key>
     <array>
-        <string>pipenv run supervisord</string>
+        <string>/usr/local/bin/pipenv run supervisord</string>
         <string>-n</string>
         <string>-c</string>
         <string>CONFIG_HOME/supervisor/supervisord.conf</string>
