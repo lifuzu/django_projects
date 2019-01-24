@@ -35,19 +35,29 @@ $ rm /etc/supervisor/conf.d/supervisord.conf.bak
 ```
 $ brew install supervisor
 
-# Edit to uncomment the below two lines
+# export the defined environmental variables
+$ source .env
+
+# Edit to uncomment the below two lines in
 # /usr/local/etc/supervisord.ini
-# TODO:
-;[inet_http_server]         ; inet (TCP) server disabled by default
-;port=127.0.0.1:9001        ; ip_address:port specifier, *:port for all iface
+# ;[inet_http_server]         ; inet (TCP) server disabled by default
+# ;port=127.0.0.1:9001        ; ip_address:port specifier, *:port for all iface
+$ sed -i.bak -e "s/\;\(\[inet_http_server\]\)/\1/g" ${CONFIG_HOME}/supervisord.ini
+$ sed -i.bak -e "s/\;\(port=127.0.0.1:9001\)/\1/g" ${CONFIG_HOME}/supervisord.ini
+$ rm ${CONFIG_HOME}/supervisord.ini.bak
 
 # Copy the template and edit
-# /usr/local/etc/supervisor.d/rili.local.com.ini
+# to create a file, like: /usr/local/etc/supervisor.d/rili.local.com.ini
+$ cp tools/templates/supervisord.template.conf ${CONFIG_HOME}/supervisor.d/${DOMAIN_NAME}.ini
+$ sed -i.bak "s/DOMAIN/${DOMAIN_NAME}/g" ${CONFIG_HOME}/supervisor.d/${DOMAIN_NAME}.ini
+$ sed -i.bak "s|DEPLOY_HOME|${DEPLOY_HOME}|g" ${CONFIG_HOME}/supervisor.d/${DOMAIN_NAME}.ini
+$ sed -i.bak "s/DEPLOY_USER/${DEPLOY_USER}/g" ${CONFIG_HOME}/supervisor.d/${DOMAIN_NAME}.ini
+$ rm ${CONFIG_HOME}/supervisor.d/${DOMAIN_NAME}.ini.bak
 
 # Start
 $ pipenv run supervisord -n -c /usr/local/etc/supervisord.ini
 
-# Reload
+# Reload if any config changed
 $ pipenv run supervisorctl -c /usr/local/etc/supervisord.ini reload
 ```
 
@@ -58,16 +68,6 @@ $ supervisorctl start celery
 $ supervisorctl start flower
 # OR
 $ supervisorctl start all
-```
-
-### TODO: Install / launch Redis
-
-### TODO: Install / launch PostgreSQL
-
-### TODO: Create deploy USER and deployemnt HOME
-```
-$ DEPLOY_USER=deploy
-$ DEPLOY_HOME=/home/${DEPLOY_USER}/sites/${DOMAIN_NAME}
 ```
 
 ### Update Supervisor config if any change(s)
