@@ -1,6 +1,6 @@
 
  - [x] Support Supervisord;
- - [ ] Gunicorn config;
+ - [x] Gunicorn config;
  - [ ] Dockerfile
  - [ ] Docker-compose.yml
  - [ ] Habitat
