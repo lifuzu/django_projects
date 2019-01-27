@@ -90,3 +90,6 @@ port=0.0.0.0:9001
 ```
 $ supervisorctl reload
 ```
+
+### Reference:
+https://advancedweb.hu/2018/07/03/supervisor_docker/
