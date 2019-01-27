@@ -1,8 +1,8 @@
 
  - [x] Support Supervisord;
  - [x] Gunicorn config;
- - [ ] Dockerfile
- - [ ] Docker-compose.yml
+ - [x] Dockerfile
+ - [x] Docker-compose.yml
  - [ ] Habitat
  - [ ] Ksonnet
  - [ ] Helm
@@ -10,7 +10,10 @@
  - [ ] Ansible
  - [ ] Chef
 
- - [ ] Create deploy USER and deployemnt HOME
+ - [x] Create deploy USER and deployemnt HOME in Docker
+ - [ ] Log management with Elastic Logstack Kibana
+ - [ ] Celery log management
+ - [ ] Setting up Celery Beats
 
 
 ### TODO: Create deploy USER and deployemnt HOME
