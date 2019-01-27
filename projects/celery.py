@@ -5,7 +5,8 @@ from celery import Celery
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projects.settings')
 
-app = Celery('projects', broker='redis://localhost')
+REDIS_HOST = "redis" if os.getenv("DOCKER_CONTAINER") else os.getenv("REDIS_HOST")
+app = Celery('projects', broker='redis://' + REDIS_HOST)
 
 # Using a string here means the worker doesn't have to serialize
 # the configuration object to child processes.

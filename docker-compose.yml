@@ -2,37 +2,54 @@ version: '3'
 
 services:
   db:
-    image: postgres:9.6.5
+    image: "postgres:latest"
+    restart: always
+    # environment:
+    #   - POSTGRES_USER=${DB_USER}
+    #   - POSTGRES_DB=${DB_NAME}
+    #   - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - ./tools/entrypoint/db.sh:/docker-entrypoint-initdb.d/init-db.sh
+
   redis:
     image: "redis:alpine"
-  web:
-    build: .
-    command: bash -c "python /code/manage.py migrate --noinput && python /code/manage.py runserver 0.0.0.0:8000"
+    restart: always
+  nginx:
+    image: "nginx:latest"
+    restart: always
+    ports:
+      - "80:80"
     volumes:
-      - .:/code
+      - ./tools/templates/nginx.instance.conf:/etc/nginx/conf.d/default.conf
+      - static_root:/static
+    # command: >
+    #   /bin/bash -c "
+    #   cat /tmp/nginx.template.conf
+    #   && envsubst \"`for v in $$(compgen -v);do printf '$${%s} ' $$v;done`'\"
+    #   < /tmp/nginx.template.conf
+    #   > /etc/nginx/conf.d/default.conf
+    #   && cat /etc/nginx/conf.d/default.conf
+    #   && nginx -g 'daemon off;'"
+    depends_on:
+      - web
+
+  web:
+    image: rili/django_projects
+    # build: .
+    # command: bash -c "python /code/manage.py migrate --noinput && python /code/manage.py runserver 0.0.0.0:8000"
+    # volumes:
+    #   - .:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db
-      - redis
-  celery:
-    build: .
-    command: celery -A proj worker -l info
+      - "127.0.0.1:5555:5555"
+      - "127.0.0.1:9001:9001"
     volumes:
-      - .:/code
-    depends_on:
-      - db
-      - redis
-  celery-beat:
-    build: .
-    command: celery -A proj beat -l info
-    volumes:
-      - .:/code
+      - static_root:${DEPLOY_HOME}/static
     depends_on:
       - db
       - redis
 
 volumes:
   postgres_data:
+  static_root:

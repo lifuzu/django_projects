@@ -32,7 +32,7 @@ RUN pip install -r ${DEPLOY_HOME}/requirements.txt
 
 WORKDIR ${DEPLOY_HOME}
 
-EXPOSE 80
+EXPOSE 8000
 
 # Install supervisor
 RUN apt-get update && apt-get install -y --no-install-recommends supervisor
@@ -43,13 +43,16 @@ RUN sed -i "s/DOMAIN/${DOMAIN_NAME}/g"      /etc/supervisor/conf.d/supervisord.c
 RUN sed -i "s|DEPLOY_HOME|${DEPLOY_HOME}|g" /etc/supervisor/conf.d/supervisord.conf
 RUN sed -i "s/DEPLOY_USER/${DEPLOY_USER}/g" /etc/supervisor/conf.d/supervisord.conf
 # Setting up supervisor web UI
-RUN sed -i -e "s/\;\(\[inet_http_server\]\)/\1/g" /etc/supervisor/supervisord.conf
-RUN sed -i -e "s/\;\(port=127.0.0.1:9001\)/\1/g"  /etc/supervisor/supervisord.conf
+RUN echo >> /etc/supervisor/supervisord.conf
+RUN echo "[inet_http_server]"  >> /etc/supervisor/supervisord.conf
+RUN echo "port=0.0.0.0:9001"   >> /etc/supervisor/supervisord.conf
+# RUN sed -i -e "s/\;\(\[inet_http_server\]\)/\1/g" /etc/supervisor/supervisord.conf
+# RUN sed -i -e "s/\;\(port=127.0.0.1:9001\)/\1/g"  /etc/supervisor/supervisord.conf
 
 EXPOSE 9001
 EXPOSE 5555
 
 # USER ${DEPLOY_USER}
 
+ENTRYPOINT ["./tools/entrypoint/web.sh"]
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
-# ENTRYPOINT ["${DEPLOY_USER}/tools/bin/entrypoint.sh"]
