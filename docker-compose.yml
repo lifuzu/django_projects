@@ -19,7 +19,8 @@ services:
       - "80:80"
     volumes:
       - ./tools/templates/nginx.instance.conf:/etc/nginx/conf.d/default.conf
-      - static_root:/static
+      - static_volume:/static
+      - media_volume:/mediafiles
     # command: >
     #   /bin/bash -c "
     #   cat /tmp/nginx.template.conf
@@ -46,12 +47,13 @@ services:
     logging:
       driver: "json-file"
     volumes:
-      - static_root:${DEPLOY_HOME}/static
+      - static_volume:${DEPLOY_HOME}/static
+      - media_volume:${DEPLOY_HOME}/mediafiles
     depends_on:
       - db
       - redis
 
 volumes:
   postgres_data:
-  static_root:
-  esdata:
+  static_volume:
+  media_volume:
