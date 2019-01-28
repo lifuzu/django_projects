@@ -1,13 +1,9 @@
-version: '3'
+version: '3.3'
 
 services:
   db:
     image: "postgres:latest"
     restart: always
-    # environment:
-    #   - POSTGRES_USER=${DB_USER}
-    #   - POSTGRES_DB=${DB_NAME}
-    #   - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
       - ./tools/entrypoint/db.sh:/docker-entrypoint-initdb.d/init-db.sh
@@ -15,6 +11,7 @@ services:
   redis:
     image: "redis:alpine"
     restart: always
+
   nginx:
     image: "nginx:latest"
     restart: always
@@ -44,6 +41,10 @@ services:
       - "8000:8000"
       - "127.0.0.1:5555:5555"
       - "127.0.0.1:9001:9001"
+    environment:
+      - LOGSTASH_HOST=logstash
+    logging:
+      driver: "json-file"
     volumes:
       - static_root:${DEPLOY_HOME}/static
     depends_on:
@@ -53,3 +54,4 @@ services:
 volumes:
   postgres_data:
   static_root:
+  esdata:

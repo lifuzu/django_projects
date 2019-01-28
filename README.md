@@ -1,4 +1,19 @@
 
+### Build Django projects Docker image
+```
+$ docker build -t rili/django_projects .
+```
+
+### Start the process with Docker-compose
+```
+$ docker-compose up
+```
+
+### Stop the process with Docker-compose
+```
+$ docker-compose down
+```
+
 ### Create retries Django app
 ```
 # Make sure you're in pipenv shell by running `pipenv shell`

@@ -9,11 +9,14 @@
  - [ ] Fabric
  - [ ] Ansible
  - [ ] Chef
+ - [ ] Traefik
 
  - [x] Create deploy USER and deployemnt HOME in Docker
+ - [ ] Docker compose ELK
  - [ ] Log management with Elastic Logstack Kibana
  - [ ] Celery log management
  - [ ] Setting up Celery Beats
+ - [ ] NATS
 
 
 ### TODO: Create deploy USER and deployemnt HOME
