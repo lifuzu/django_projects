@@ -10,6 +10,8 @@
  - [ ] Ansible
  - [ ] Chef
  - [ ] Traefik
+ - [ ] Vault
+ - [ ] Consul
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK
@@ -17,6 +19,8 @@
  - [ ] Celery log management
  - [ ] Setting up Celery Beats
  - [ ] NATS
+
+ - [ ] Refactor upload with React
 
 
 ### TODO: Create deploy USER and deployemnt HOME

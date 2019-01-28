@@ -44,11 +44,16 @@ services:
       - "127.0.0.1:9001:9001"
     environment:
       - LOGSTASH_HOST=logstash
+      - DB_KIND=${DB_KIND}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - MEDIA_HOME=${MEDIA_HOME}
     logging:
       driver: "json-file"
     volumes:
+      - ./tools/entrypoint/web.sh:${DEPLOY_HOME}/tools/entrypoint/web.sh
       - static_volume:${DEPLOY_HOME}/static
-      - media_volume:${DEPLOY_HOME}/mediafiles
+      - media_volume:${MEDIA_HOME}/mediafiles
     depends_on:
       - db
       - redis

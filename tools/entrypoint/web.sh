@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 # Wait for Postgres Started
 if [ "${DB_KIND}" = "postgres" ]
@@ -21,5 +21,9 @@ python manage.py loaddata retries
 
 # Setting up static resource folder
 python manage.py collectstatic --no-input
+
+# Setting up write permission
+echo "chmod a+w ${MEDIA_HOME}/mediafiles"
+chmod a+w ${MEDIA_HOME}/mediafiles
 
 exec "$@"

@@ -2,3 +2,6 @@
 node_modules/
 static/
 htmlcov/
+
+dump.rdb
+db.sqlite3
