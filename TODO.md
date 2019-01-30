@@ -3,6 +3,7 @@
  - [x] Gunicorn config;
  - [x] Dockerfile
  - [x] Docker-compose.yml
+ - [x] Minikube
  - [ ] Habitat
  - [ ] Ksonnet
  - [ ] Helm
@@ -10,8 +11,9 @@
  - [ ] Ansible
  - [ ] Chef
  - [ ] Traefik
- - [ ] Vault
- - [ ] Consul
+ - [x] Vault
+ - [x] Consul
+ - [ ] Kubeless
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK

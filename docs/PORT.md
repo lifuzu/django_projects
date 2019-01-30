@@ -5,3 +5,6 @@
 9001 - Supervisor, web UI
 
 
+55397 - Minikube dashboard
+8500 - Consul
+8200 - Vault
