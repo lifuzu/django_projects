@@ -27,7 +27,16 @@ Stopping local Kubernetes cluster...
 Machine stopped.
 ```
 
-Misc commands:
+Minikube sets this context to default automatically, but if you need to switch back to it in the future, run:
+```
+$ kubectl config use-context minikube
+```
+or pass the context on each command like this:
+```
+$ kubectl get pods --context=minikube
+```
+
+Other misc commands:
 ```
 $ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
 deployment "hello-minikube" created
