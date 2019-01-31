@@ -13,7 +13,9 @@
  - [ ] Traefik
  - [x] Vault
  - [x] Consul
- - [ ] Kubeless
+ - [x] Kubeless
+ - [ ] Ambassador
+ - [ ] Telepresence
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK
