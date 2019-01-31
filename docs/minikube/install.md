@@ -66,7 +66,19 @@ $ kubectl delete deployment hello-minikube
 deployment "hello-minikube" deleted
 ```
 
+### Enable RBAC (not verify yet)
+https://gist.github.com/F21/08bfc2e3592bed1e931ec40b8d2ab6f5
+```
+$ minikube start --extra-config=apiserver.authorization-mode=RBAC
+$ kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
+```
+
 ### References
 https://kubernetes.io/docs/setup/minikube/
 https://github.com/kubernetes/minikube#quickstart
 https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+RBAC:
+https://github.com/kubernetes/minikube/issues/1734#issue-245035445
+https://github.com/kubernetes/minikube/issues/1722
+https://github.com/kubernetes/minikube/issues/2510
