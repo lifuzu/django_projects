@@ -16,6 +16,8 @@
  - [x] Kubeless
  - [ ] Ambassador
  - [ ] Telepresence
+ - [ ] TLS
+ - [ ] Authentication
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK
@@ -25,6 +27,7 @@
  - [ ] NATS
 
  - [ ] Refactor upload with React
+ - [ ] Kubeless UI - https://github.com/kubeless/kubeless-ui
 
 
 ### TODO: Create deploy USER and deployemnt HOME
