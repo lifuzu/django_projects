@@ -57,6 +57,52 @@ INFO[0000] Deploying function...
 INFO[0000] Function hello submitted for deployment
 INFO[0000] Check the deployment status executing 'kubeless function ls hello'
 ```
+```
+$ kubectl get po
+NAME                     READY   STATUS    RESTARTS   AGE
+...
+hello-779487cc4d-wszpw   1/1     Running   1          37m
+...
+```
+```
+$ kubectl get svc
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                            AGE
+...
+hello        ClusterIP   10.109.236.184   <none>        8080/TCP                                                                           37m
+```
+
+### Expose a function by creating a HTTP Trigger object
+```
+$ kubeless trigger http create hello --function-name hello
+INFO[0000] HTTP trigger hello created in namespace default successfully!
+SC-rleeMacBookPro:django_projects rlee$ kubectl get ing
+NAME    HOSTS                         ADDRESS   PORTS   AGE
+hello   hello.192.168.99.103.nip.io             80      3s
+```
+
+### Delete HTTP Trigger
+```
+$ kubeless trigger http delete hello
+INFO[0000] HTTP trigger hello deleted from namespace default successfully!
+```
+
+### Expose a function with hostname and path
+```
+$ kubeless trigger http create hello --function-name hello --path echo (--hostname rili.local.com)
+INFO[0000] HTTP trigger hello created in namespace default successfully!
+$ kubectl get ing
+NAME    HOSTS                         ADDRESS   PORTS   AGE
+hello   hello.192.168.99.103.nip.io             80      7s
+```
+
+### Test the created HTTP trigger with the following command:
+```
+$ curl --data '{"Another": "Echo"}' \
+  --header "Host: hello.192.168.99.103.nip.io" \
+  --header "Content-Type:application/json" \
+  192.168.99.103/echo
+{"Another": "Echo"}
+```
 
 ### Verify the function custom resource created:
 ```

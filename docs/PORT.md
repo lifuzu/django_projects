@@ -6,5 +6,6 @@
 
 
 55397 - Minikube dashboard
-8500 - Consul
+8500/TCP,8443/TCP,8400/TCP,8301/TCP,8301/UDP,8302/TCP,8302/UDP,8300/TCP,8600/TCP - Consul
 8200 - Vault
+8080 - Kubeless
