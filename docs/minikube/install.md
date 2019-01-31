@@ -36,6 +36,26 @@ or pass the context on each command like this:
 $ kubectl get pods --context=minikube
 ```
 
+Status
+```
+$ minikube status
+```
+
+List addons:
+```
+$ minikube addons list
+```
+
+Enable one addon:
+```
+$ minikube addons enable ingress
+```
+
+Check pods in minikube:
+```
+$ kubectl get pod -n kube-system
+```
+
 Other misc commands:
 ```
 $ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
