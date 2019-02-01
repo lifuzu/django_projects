@@ -1,0 +1,357 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mermaidjs · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../gitbook.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../gitbook/chart/" />
+    
+    
+    <link rel="prev" href="../certificate/understand.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../celery/install.html">
+            
+                <a href="../celery/install.html">
+            
+                    
+                    Celery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../certificate/understand.html">
+            
+                <a href="../certificate/understand.html">
+            
+                    
+                    Certificate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../certificate/understand.html">
+            
+                <a href="../certificate/understand.html#self-signed">
+            
+                    
+                    Self signed certificate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Playground</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Mermaidjs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../gitbook/chart/">
+            
+                <a href="../gitbook/chart/">
+            
+                    
+                    C3 Chart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mermaidjs</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduce-mermaid-diagram">Introduce Mermaid diagram</h1>
+<p><a href="https://mermaidjs.github.io/" target="_blank">https://mermaidjs.github.io/</a></p>
+<h3 id="install-mermaid">Install mermaid</h3>
+<pre><code>$ npm i -g mermaid.cli
+</code></pre><h3 id="setting-up-mermaid-in-bookjson">Setting up mermaid in book.json</h3>
+<pre><code>{
+    &quot;plugins&quot;: [&quot;mermaid-flow&quot;]
+}
+</code></pre><h3 id="an-example-of-a-flowchart">An example of a flowchart</h3>
+<p>
+<!--mermaid-->
+<div>
+<svg id="mermaid-1549006345813" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 124.640625px;" viewbox="0 0 124.640625 233"><style>#mermaid-1549006345813 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1549006345813 .node circle,#mermaid-1549006345813 .node ellipse,#mermaid-1549006345813 .node polygon,#mermaid-1549006345813 .node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}#mermaid-1549006345813 .node.clickable{cursor:pointer}#mermaid-1549006345813 .arrowheadPath{fill:green}#mermaid-1549006345813 .edgePath .path{stroke:green;stroke-width:1.5px}#mermaid-1549006345813 .edgeLabel{background-color:#e8e8e8}#mermaid-1549006345813 .cluster rect{fill:#cdffb2!important;stroke:#6eaa49!important;stroke-width:1px!important}#mermaid-1549006345813 .cluster text{fill:#333}#mermaid-1549006345813 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#cdffb2;border:1px solid #6eaa49;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1549006345813 .actor{stroke:#13540c;fill:#cde498}#mermaid-1549006345813 text.actor{fill:#000;stroke:none}#mermaid-1549006345813 .actor-line{stroke:grey}#mermaid-1549006345813 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1549006345813 .messageLine0,#mermaid-1549006345813 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1549006345813 #arrowhead{fill:#333}#mermaid-1549006345813 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1549006345813 .messageText{fill:#333;stroke:none}#mermaid-1549006345813 .labelBox{stroke:#326932;fill:#cde498}#mermaid-1549006345813 .labelText,#mermaid-1549006345813 .loopText{fill:#000;stroke:none}#mermaid-1549006345813 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}#mermaid-1549006345813 .note{stroke:#6eaa49;fill:#fff5ad}#mermaid-1549006345813 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1549006345813 .section{stroke:none;opacity:.2}#mermaid-1549006345813 .section0,#mermaid-1549006345813 .section2{fill:#6eaa49}#mermaid-1549006345813 .section1,#mermaid-1549006345813 .section3{fill:#fff;opacity:.2}#mermaid-1549006345813 .sectionTitle0,#mermaid-1549006345813 .sectionTitle1,#mermaid-1549006345813 .sectionTitle2,#mermaid-1549006345813 .sectionTitle3{fill:#333}#mermaid-1549006345813 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1549006345813 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1549006345813 .grid path{stroke-width:0}#mermaid-1549006345813 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1549006345813 .task{stroke-width:2}#mermaid-1549006345813 .taskText{text-anchor:middle;font-size:11px}#mermaid-1549006345813 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1549006345813 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1549006345813 .taskText0,#mermaid-1549006345813 .taskText1,#mermaid-1549006345813 .taskText2,#mermaid-1549006345813 .taskText3{fill:#fff}#mermaid-1549006345813 .task0,#mermaid-1549006345813 .task1,#mermaid-1549006345813 .task2,#mermaid-1549006345813 .task3{fill:#487e3a;stroke:#13540c}#mermaid-1549006345813 .taskTextOutside0,#mermaid-1549006345813 .taskTextOutside1,#mermaid-1549006345813 .taskTextOutside2,#mermaid-1549006345813 .taskTextOutside3{fill:#000}#mermaid-1549006345813 .active0,#mermaid-1549006345813 .active1,#mermaid-1549006345813 .active2,#mermaid-1549006345813 .active3{fill:#cde498;stroke:#13540c}#mermaid-1549006345813 .activeText0,#mermaid-1549006345813 .activeText1,#mermaid-1549006345813 .activeText2,#mermaid-1549006345813 .activeText3{fill:#000!important}#mermaid-1549006345813 .done0,#mermaid-1549006345813 .done1,#mermaid-1549006345813 .done2,#mermaid-1549006345813 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1549006345813 .doneText0,#mermaid-1549006345813 .doneText1,#mermaid-1549006345813 .doneText2,#mermaid-1549006345813 .doneText3{fill:#000!important}#mermaid-1549006345813 .crit0,#mermaid-1549006345813 .crit1,#mermaid-1549006345813 .crit2,#mermaid-1549006345813 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1549006345813 .activeCrit0,#mermaid-1549006345813 .activeCrit1,#mermaid-1549006345813 .activeCrit2,#mermaid-1549006345813 .activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}#mermaid-1549006345813 .doneCrit0,#mermaid-1549006345813 .doneCrit1,#mermaid-1549006345813 .doneCrit2,#mermaid-1549006345813 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1549006345813 .activeCritText0,#mermaid-1549006345813 .activeCritText1,#mermaid-1549006345813 .activeCritText2,#mermaid-1549006345813 .activeCritText3,#mermaid-1549006345813 .doneCritText0,#mermaid-1549006345813 .doneCritText1,#mermaid-1549006345813 .doneCritText2,#mermaid-1549006345813 .doneCritText3{fill:#000!important}#mermaid-1549006345813 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1549006345813 g.classGroup text{fill:#13540c;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1549006345813 g.classGroup rect{fill:#cde498;stroke:#13540c}#mermaid-1549006345813 g.classGroup line{stroke:#13540c;stroke-width:1}#mermaid-1549006345813 .classLabel .box{stroke:none;stroke-width:0;fill:#cde498;opacity:.5}#mermaid-1549006345813 .classLabel .label{fill:#13540c;font-size:10px}#mermaid-1549006345813 .relation{stroke:#13540c;stroke-width:1;fill:none}#mermaid-1549006345813 #compositionEnd,#mermaid-1549006345813 #compositionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006345813 #aggregationEnd,#mermaid-1549006345813 #aggregationStart{fill:#cde498;stroke:#13540c;stroke-width:1}#mermaid-1549006345813 #dependencyEnd,#mermaid-1549006345813 #dependencyStart,#mermaid-1549006345813 #extensionEnd,#mermaid-1549006345813 #extensionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006345813 .branch-label,#mermaid-1549006345813 .commit-id,#mermaid-1549006345813 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1549006345813 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"/><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M59.47265625,56.01492169802029L34.53125,84L34.53125,109" marker-end="url(#arrowhead14)" style="fill:none"/><defs><marker id="arrowhead14" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M88.91015625,56.01492169802029L113.8515625,84L113.8515625,109" marker-end="url(#arrowhead15)" style="fill:none"/><defs><marker id="arrowhead15" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M34.53125,148L34.53125,173L59.28515625,200.77469713385207" marker-end="url(#arrowhead16)" style="fill:none"/><defs><marker id="arrowhead16" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M113.8515625,148L113.8515625,173L89.09765625,200.77469713385207" marker-end="url(#arrowhead17)" style="fill:none"/><defs><marker id="arrowhead17" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"/></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"/></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"/></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"/></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(74.19140625,39.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-14.71875" y="-19.5" width="29.4375" height="39"/><g class="label" transform="translate(0,0)"><g transform="translate(-4.71875,-9.5)"><foreignobject width="9.4375" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">A</div></foreignobject></g></g></g><g class="node" id="B" transform="translate(34.53125,128.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-14.53125" y="-19.5" width="29.0625" height="39"/><g class="label" transform="translate(0,0)"><g transform="translate(-4.53125,-9.5)"><foreignobject width="9.0625" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B</div></foreignobject></g></g></g><g class="node" id="C" transform="translate(113.8515625,128.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-14.7890625" y="-19.5" width="29.578125" height="39"/><g class="label" transform="translate(0,0)"><g transform="translate(-4.7890625,-9.5)"><foreignobject width="9.578125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C</div></foreignobject></g></g></g><g class="node" id="D" transform="translate(74.19140625,217.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-14.90625" y="-19.5" width="29.8125" height="39"/><g class="label" transform="translate(0,0)"><g transform="translate(-4.90625,-9.5)"><foreignobject width="9.8125" height="19"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">D</div></foreignobject></g></g></g></g></g></g></svg>
+</div>
+<!--endmermaid-->
+
+</p>
+<h3 id="an-example-of-a-sequence-diagram">An example of a sequence diagram</h3>
+<p>
+<!--mermaid-->
+<div>
+<svg id="mermaid-1549006346744" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:750px;" viewbox="-50 -10 750 463"><style>#mermaid-1549006346744 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1549006346744 .node circle,#mermaid-1549006346744 .node ellipse,#mermaid-1549006346744 .node polygon,#mermaid-1549006346744 .node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}#mermaid-1549006346744 .node.clickable{cursor:pointer}#mermaid-1549006346744 .arrowheadPath{fill:green}#mermaid-1549006346744 .edgePath .path{stroke:green;stroke-width:1.5px}#mermaid-1549006346744 .edgeLabel{background-color:#e8e8e8}#mermaid-1549006346744 .cluster rect{fill:#cdffb2!important;stroke:#6eaa49!important;stroke-width:1px!important}#mermaid-1549006346744 .cluster text{fill:#333}#mermaid-1549006346744 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#cdffb2;border:1px solid #6eaa49;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1549006346744 .actor{stroke:#13540c;fill:#cde498}#mermaid-1549006346744 text.actor{fill:#000;stroke:none}#mermaid-1549006346744 .actor-line{stroke:grey}#mermaid-1549006346744 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1549006346744 .messageLine0,#mermaid-1549006346744 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1549006346744 #arrowhead{fill:#333}#mermaid-1549006346744 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1549006346744 .messageText{fill:#333;stroke:none}#mermaid-1549006346744 .labelBox{stroke:#326932;fill:#cde498}#mermaid-1549006346744 .labelText,#mermaid-1549006346744 .loopText{fill:#000;stroke:none}#mermaid-1549006346744 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}#mermaid-1549006346744 .note{stroke:#6eaa49;fill:#fff5ad}#mermaid-1549006346744 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1549006346744 .section{stroke:none;opacity:.2}#mermaid-1549006346744 .section0,#mermaid-1549006346744 .section2{fill:#6eaa49}#mermaid-1549006346744 .section1,#mermaid-1549006346744 .section3{fill:#fff;opacity:.2}#mermaid-1549006346744 .sectionTitle0,#mermaid-1549006346744 .sectionTitle1,#mermaid-1549006346744 .sectionTitle2,#mermaid-1549006346744 .sectionTitle3{fill:#333}#mermaid-1549006346744 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1549006346744 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1549006346744 .grid path{stroke-width:0}#mermaid-1549006346744 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1549006346744 .task{stroke-width:2}#mermaid-1549006346744 .taskText{text-anchor:middle;font-size:11px}#mermaid-1549006346744 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1549006346744 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1549006346744 .taskText0,#mermaid-1549006346744 .taskText1,#mermaid-1549006346744 .taskText2,#mermaid-1549006346744 .taskText3{fill:#fff}#mermaid-1549006346744 .task0,#mermaid-1549006346744 .task1,#mermaid-1549006346744 .task2,#mermaid-1549006346744 .task3{fill:#487e3a;stroke:#13540c}#mermaid-1549006346744 .taskTextOutside0,#mermaid-1549006346744 .taskTextOutside1,#mermaid-1549006346744 .taskTextOutside2,#mermaid-1549006346744 .taskTextOutside3{fill:#000}#mermaid-1549006346744 .active0,#mermaid-1549006346744 .active1,#mermaid-1549006346744 .active2,#mermaid-1549006346744 .active3{fill:#cde498;stroke:#13540c}#mermaid-1549006346744 .activeText0,#mermaid-1549006346744 .activeText1,#mermaid-1549006346744 .activeText2,#mermaid-1549006346744 .activeText3{fill:#000!important}#mermaid-1549006346744 .done0,#mermaid-1549006346744 .done1,#mermaid-1549006346744 .done2,#mermaid-1549006346744 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1549006346744 .doneText0,#mermaid-1549006346744 .doneText1,#mermaid-1549006346744 .doneText2,#mermaid-1549006346744 .doneText3{fill:#000!important}#mermaid-1549006346744 .crit0,#mermaid-1549006346744 .crit1,#mermaid-1549006346744 .crit2,#mermaid-1549006346744 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1549006346744 .activeCrit0,#mermaid-1549006346744 .activeCrit1,#mermaid-1549006346744 .activeCrit2,#mermaid-1549006346744 .activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}#mermaid-1549006346744 .doneCrit0,#mermaid-1549006346744 .doneCrit1,#mermaid-1549006346744 .doneCrit2,#mermaid-1549006346744 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1549006346744 .activeCritText0,#mermaid-1549006346744 .activeCritText1,#mermaid-1549006346744 .activeCritText2,#mermaid-1549006346744 .activeCritText3,#mermaid-1549006346744 .doneCritText0,#mermaid-1549006346744 .doneCritText1,#mermaid-1549006346744 .doneCritText2,#mermaid-1549006346744 .doneCritText3{fill:#000!important}#mermaid-1549006346744 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1549006346744 g.classGroup text{fill:#13540c;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1549006346744 g.classGroup rect{fill:#cde498;stroke:#13540c}#mermaid-1549006346744 g.classGroup line{stroke:#13540c;stroke-width:1}#mermaid-1549006346744 .classLabel .box{stroke:none;stroke-width:0;fill:#cde498;opacity:.5}#mermaid-1549006346744 .classLabel .label{fill:#13540c;font-size:10px}#mermaid-1549006346744 .relation{stroke:#13540c;stroke-width:1;fill:none}#mermaid-1549006346744 #compositionEnd,#mermaid-1549006346744 #compositionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006346744 #aggregationEnd,#mermaid-1549006346744 #aggregationStart{fill:#cde498;stroke:#13540c;stroke-width:1}#mermaid-1549006346744 #dependencyEnd,#mermaid-1549006346744 #dependencyStart,#mermaid-1549006346744 #extensionEnd,#mermaid-1549006346744 #extensionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006346744 .branch-label,#mermaid-1549006346744 .commit-id,#mermaid-1549006346744 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1549006346744 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style><g/><g><line id="actor0" x1="75" y1="5" x2="75" y2="452" class="actor-line" stroke-width="0.5px" stroke="#999"/><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Alice</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="452" class="actor-line" stroke-width="0.5px" stroke="#999"/><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bob</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="452" class="actor-line" stroke-width="0.5px" stroke="#999"/><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">John</tspan></text></g><defs><marker id="arrowhead" refx="5" refy="2" markerwidth="6" markerheight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"/></marker></defs><defs><marker id="crosshead" markerwidth="15" markerheight="8" orient="auto" refx="16" refy="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"/><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"/></marker></defs><g><text x="275" y="93" class="messageText" style="text-anchor: middle;">Hello John, how are you?</text><line x1="75" y1="100" x2="475" y2="100" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"/></g><g><text x="475" y="153" class="messageText" style="text-anchor: middle;">Fight against hypochondria</text><path d="M 475,160 C 535,150 535,190 475,180" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"/></g><g><line x1="365" y1="110" x2="585" y2="110" class="loopLine"/><line x1="585" y1="110" x2="585" y2="200" class="loopLine"/><line x1="365" y1="200" x2="585" y2="200" class="loopLine"/><line x1="365" y1="110" x2="365" y2="200" class="loopLine"/><polygon points="365,110 415,110 415,123 406.6,130 365,130" class="labelBox"/><text x="372.5" y="125" fill="black" class="labelText"><tspan x="372.5" fill="black">loop</tspan></text><text x="475" y="125" fill="black" class="loopText" style="text-anchor: middle;"><tspan x="475" fill="black">[ Healthcheck ]</tspan></text></g><g><rect x="500" y="210" fill="#EDF2AE" stroke="#666" width="150" height="52" rx="0" ry="0" class="note"/><text x="496" y="234" fill="black" class="noteText"><tspan x="516" fill="black">Rational thoughts </tspan></text><text x="496" y="250" fill="black" class="noteText"><tspan x="516" fill="black">prevail...</tspan></text></g><g><text x="275" y="290" class="messageText" style="text-anchor: middle;">Great!</text><line x1="475" y1="297" x2="75" y2="297" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"/></g><g><text x="375" y="325" class="messageText" style="text-anchor: middle;">How about you?</text><line x1="475" y1="332" x2="275" y2="332" class="messageLine0" stroke-width="2" stroke="black" style="fill: none;"/></g><g><text x="375" y="360" class="messageText" style="text-anchor: middle;">Jolly good!</text><line x1="275" y1="367" x2="475" y2="367" class="messageLine1" stroke-width="2" stroke="black" style="stroke-dasharray: 3, 3; fill: none;"/></g><g><rect x="0" y="387" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="75" y="419.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Alice</tspan></text></g><g><rect x="200" y="387" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="275" y="419.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Bob</tspan></text></g><g><rect x="400" y="387" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"/><text x="475" y="419.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">John</tspan></text></g></svg>
+</div>
+<!--endmermaid-->
+
+</p>
+<h3 id="an-example-of-a-gantt-diagram">An example of a gantt diagram</h3>
+<p>
+<!--mermaid-->
+<div>
+<svg id="mermaid-1549006347632" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 784 340"><style>#mermaid-1549006347632 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1549006347632 .node circle,#mermaid-1549006347632 .node ellipse,#mermaid-1549006347632 .node polygon,#mermaid-1549006347632 .node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}#mermaid-1549006347632 .node.clickable{cursor:pointer}#mermaid-1549006347632 .arrowheadPath{fill:green}#mermaid-1549006347632 .edgePath .path{stroke:green;stroke-width:1.5px}#mermaid-1549006347632 .edgeLabel{background-color:#e8e8e8}#mermaid-1549006347632 .cluster rect{fill:#cdffb2!important;stroke:#6eaa49!important;stroke-width:1px!important}#mermaid-1549006347632 .cluster text{fill:#333}#mermaid-1549006347632 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#cdffb2;border:1px solid #6eaa49;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1549006347632 .actor{stroke:#13540c;fill:#cde498}#mermaid-1549006347632 text.actor{fill:#000;stroke:none}#mermaid-1549006347632 .actor-line{stroke:grey}#mermaid-1549006347632 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1549006347632 .messageLine0,#mermaid-1549006347632 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1549006347632 #arrowhead{fill:#333}#mermaid-1549006347632 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1549006347632 .messageText{fill:#333;stroke:none}#mermaid-1549006347632 .labelBox{stroke:#326932;fill:#cde498}#mermaid-1549006347632 .labelText,#mermaid-1549006347632 .loopText{fill:#000;stroke:none}#mermaid-1549006347632 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}#mermaid-1549006347632 .note{stroke:#6eaa49;fill:#fff5ad}#mermaid-1549006347632 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1549006347632 .section{stroke:none;opacity:.2}#mermaid-1549006347632 .section0,#mermaid-1549006347632 .section2{fill:#6eaa49}#mermaid-1549006347632 .section1,#mermaid-1549006347632 .section3{fill:#fff;opacity:.2}#mermaid-1549006347632 .sectionTitle0,#mermaid-1549006347632 .sectionTitle1,#mermaid-1549006347632 .sectionTitle2,#mermaid-1549006347632 .sectionTitle3{fill:#333}#mermaid-1549006347632 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1549006347632 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1549006347632 .grid path{stroke-width:0}#mermaid-1549006347632 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1549006347632 .task{stroke-width:2}#mermaid-1549006347632 .taskText{text-anchor:middle;font-size:11px}#mermaid-1549006347632 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1549006347632 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1549006347632 .taskText0,#mermaid-1549006347632 .taskText1,#mermaid-1549006347632 .taskText2,#mermaid-1549006347632 .taskText3{fill:#fff}#mermaid-1549006347632 .task0,#mermaid-1549006347632 .task1,#mermaid-1549006347632 .task2,#mermaid-1549006347632 .task3{fill:#487e3a;stroke:#13540c}#mermaid-1549006347632 .taskTextOutside0,#mermaid-1549006347632 .taskTextOutside1,#mermaid-1549006347632 .taskTextOutside2,#mermaid-1549006347632 .taskTextOutside3{fill:#000}#mermaid-1549006347632 .active0,#mermaid-1549006347632 .active1,#mermaid-1549006347632 .active2,#mermaid-1549006347632 .active3{fill:#cde498;stroke:#13540c}#mermaid-1549006347632 .activeText0,#mermaid-1549006347632 .activeText1,#mermaid-1549006347632 .activeText2,#mermaid-1549006347632 .activeText3{fill:#000!important}#mermaid-1549006347632 .done0,#mermaid-1549006347632 .done1,#mermaid-1549006347632 .done2,#mermaid-1549006347632 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1549006347632 .doneText0,#mermaid-1549006347632 .doneText1,#mermaid-1549006347632 .doneText2,#mermaid-1549006347632 .doneText3{fill:#000!important}#mermaid-1549006347632 .crit0,#mermaid-1549006347632 .crit1,#mermaid-1549006347632 .crit2,#mermaid-1549006347632 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1549006347632 .activeCrit0,#mermaid-1549006347632 .activeCrit1,#mermaid-1549006347632 .activeCrit2,#mermaid-1549006347632 .activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}#mermaid-1549006347632 .doneCrit0,#mermaid-1549006347632 .doneCrit1,#mermaid-1549006347632 .doneCrit2,#mermaid-1549006347632 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1549006347632 .activeCritText0,#mermaid-1549006347632 .activeCritText1,#mermaid-1549006347632 .activeCritText2,#mermaid-1549006347632 .activeCritText3,#mermaid-1549006347632 .doneCritText0,#mermaid-1549006347632 .doneCritText1,#mermaid-1549006347632 .doneCritText2,#mermaid-1549006347632 .doneCritText3{fill:#000!important}#mermaid-1549006347632 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1549006347632 g.classGroup text{fill:#13540c;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1549006347632 g.classGroup rect{fill:#cde498;stroke:#13540c}#mermaid-1549006347632 g.classGroup line{stroke:#13540c;stroke-width:1}#mermaid-1549006347632 .classLabel .box{stroke:none;stroke-width:0;fill:#cde498;opacity:.5}#mermaid-1549006347632 .classLabel .label{fill:#13540c;font-size:10px}#mermaid-1549006347632 .relation{stroke:#13540c;stroke-width:1;fill:none}#mermaid-1549006347632 #compositionEnd,#mermaid-1549006347632 #compositionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006347632 #aggregationEnd,#mermaid-1549006347632 #aggregationStart{fill:#cde498;stroke:#13540c;stroke-width:1}#mermaid-1549006347632 #dependencyEnd,#mermaid-1549006347632 #dependencyStart,#mermaid-1549006347632 #extensionEnd,#mermaid-1549006347632 #extensionStart{fill:#13540c;stroke:#13540c;stroke-width:1}#mermaid-1549006347632 .branch-label,#mermaid-1549006347632 .commit-id,#mermaid-1549006347632 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1549006347632 {
+    color: rgb(0, 0, 0);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+  }</style><g/><g class="grid" transform="translate(75, 290)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-255V0.5H634.5V-255"/><g class="tick" opacity="1" transform="translate(40.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-07</text></g><g class="tick" opacity="1" transform="translate(119.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-09</text></g><g class="tick" opacity="1" transform="translate(198.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-11</text></g><g class="tick" opacity="1" transform="translate(277.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-13</text></g><g class="tick" opacity="1" transform="translate(357.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-15</text></g><g class="tick" opacity="1" transform="translate(436.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-17</text></g><g class="tick" opacity="1" transform="translate(515.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-19</text></g><g class="tick" opacity="1" transform="translate(594.5,0)"><line stroke="#000" y2="-255"/><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2014-01-21</text></g></g><g><rect x="0" y="48" width="746.5" height="24" class="section section0"/><rect x="0" y="72" width="746.5" height="24" class="section section0"/><rect x="0" y="96" width="746.5" height="24" class="section section0"/><rect x="0" y="120" width="746.5" height="24" class="section section0"/><rect x="0" y="144" width="746.5" height="24" class="section section1"/><rect x="0" y="168" width="746.5" height="24" class="section section1"/><rect x="0" y="192" width="746.5" height="24" class="section section1"/><rect x="0" y="216" width="746.5" height="24" class="section section1"/><rect x="0" y="240" width="746.5" height="24" class="section section1"/><rect x="0" y="264" width="746.5" height="24" class="section section1"/></g><g><rect rx="3" ry="3" x="75" y="50" width="79" height="20" class="task  done0"/><rect rx="3" ry="3" x="194" y="74" width="119" height="20" class="task  active0"/><rect rx="3" ry="3" x="313" y="98" width="198" height="20" class="task  task0"/><rect rx="3" ry="3" x="511" y="122" width="198" height="20" class="task  task0"/><rect rx="3" ry="3" x="75" y="146" width="40" height="20" class="task  doneCrit1"/><rect rx="3" ry="3" x="154" y="170" width="80" height="20" class="task  doneCrit1"/><rect rx="3" ry="3" x="234" y="194" width="118" height="20" class="task  activeCrit1"/><rect rx="3" ry="3" x="352" y="218" width="199" height="20" class="task  crit1"/><rect rx="3" ry="3" x="551" y="242" width="79" height="20" class="task  task1"/><rect rx="3" ry="3" x="630" y="266" width="39" height="20" class="task  task1"/><text font-size="11" x="114.5" y="63.5" text-height="20" class="taskText taskText0  doneText0">Completed task            </text><text font-size="11" x="253.5" y="87.5" text-height="20" class="taskText taskText0 activeText0">Active task               </text><text font-size="11" x="412" y="111.5" text-height="20" class="taskText taskText0 ">Future task               </text><text font-size="11" x="610" y="135.5" text-height="20" class="taskText taskText0 ">Future task2               </text><text font-size="11" x="120" y="159.5" text-height="20" class="taskTextOutsideRight taskTextOutside1  doneCritText1">Completed task in the critical line </text><text font-size="11" x="239" y="183.5" text-height="20" class="taskTextOutsideRight taskTextOutside1  doneCritText1">Implement parser and jison          </text><text font-size="11" x="293" y="207.5" text-height="20" class="taskText taskText1 activeCritText1 critText1">Create tests for parser             </text><text font-size="11" x="451.5" y="231.5" text-height="20" class="taskText taskText1  critText1">Future task in critical line        </text><text font-size="11" x="635" y="255.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">Create tests for renderer           </text><text font-size="11" x="674" y="279.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">Add to mermaid                      </text></g><g><text x="10" y="98" class="sectionTitle sectionTitle0">A section</text><text x="10" y="218" class="sectionTitle sectionTitle1">Critical tasks</text></g><g class="today"><line x1="73460" x2="73460" y1="25" y2="315" class="today"/></g><text x="392" y="25" class="titleText">Adding GANTT diagram functionality to mermaid</text></svg>
+</div>
+<!--endmermaid-->
+
+</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../certificate/understand.html#self-signed" class="navigation navigation-prev " aria-label="Previous page: Self signed certificate">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../gitbook/chart/" class="navigation navigation-next " aria-label="Next page: C3 Chart">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mermaidjs","level":"3.1","depth":1,"next":{"title":"C3 Chart","level":"3.2","depth":1,"path":"gitbook/chart/README.md","ref":"gitbook/chart/README.md","articles":[]},"previous":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"mermaidjs/README.md","mtime":"2019-02-01T07:11:11.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T07:32:21.520Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
