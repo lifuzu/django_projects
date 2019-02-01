@@ -2,6 +2,7 @@
 node_modules/
 static/
 htmlcov/
+_book/
 
 dump.rdb
 db.sqlite3

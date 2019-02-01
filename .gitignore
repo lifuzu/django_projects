@@ -2,5 +2,6 @@ htmlcov
 .coverage
 node_modules/
 static/
+_book/
 
 dump.rdb

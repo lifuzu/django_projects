@@ -25,6 +25,7 @@
  - [ ] Celery log management
  - [ ] Setting up Celery Beats
  - [ ] NATS
+ - [x] GitBook
 
  - [ ] Refactor upload with React
  - [ ] Kubeless UI - https://github.com/kubeless/kubeless-ui

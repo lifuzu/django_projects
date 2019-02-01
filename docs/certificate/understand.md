@@ -9,7 +9,7 @@ $ kubeless trigger http create get-python --function-name get-python --path get-
 ```
 Running the above command, Kubeless will automatically create a ingress object with annotation kubernetes.io/tls-acme: 'true' set which will be used by cert-manager to configure the service certificate.
 
-## Self-signed certificate
+## Self-signed certificate {#self-signed}
 Via command `openssl`:
 ```
 $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tools/certs/kubeless.key -out tools/certs/kubeless.crt -subj "/CN=rili.local.com"
