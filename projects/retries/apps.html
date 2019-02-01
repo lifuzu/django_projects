@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>C3 Chart · GitBook</title>
+        <title>Retries | apps · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -12,20 +12,20 @@
         
         
     
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="../gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -46,20 +46,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../projects/retries/apps.html" />
     
-    
-    <link rel="prev" href="../../mermaidjs/" />
+    <link rel="prev" href="../../gitbook/chart/" />
     
 
     
-    <link rel="stylesheet" href="../gitbook-plugin-chart/c3/c3.min.css">
-    <script src="../gitbook-plugin-chart/c3/d3.min.js"></script>
-    <script src="../gitbook-plugin-chart/c3/c3.min.js"></script>
+    <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
     
 
     </head>
@@ -173,9 +171,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="./">
+        <li class="chapter " data-level="3.2" data-path="../../gitbook/chart/">
             
-                <a href="./">
+                <a href="../../gitbook/chart/">
             
                     
                     C3 Chart
@@ -193,9 +191,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../../projects/retries/apps.html">
+        <li class="chapter active" data-level="4.1" data-path="apps.html">
             
-                <a href="../../projects/retries/apps.html">
+                <a href="apps.html">
             
                     
                     Retries | apps
@@ -236,7 +234,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >C3 Chart</a>
+        <a href="../.." >Retries | apps</a>
     </h1>
 </div>
 
@@ -251,43 +249,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduce-c3js-or-highcharts-chart-library">Introduce C3.js or Highcharts chart library</h1>
-<p><a href="https://github.com/csbun/gitbook-plugin-chart" target="_blank">https://github.com/csbun/gitbook-plugin-chart</a></p>
-<h3 id="setting-up-mermaid-in-bookjson">Setting up mermaid in book.json</h3>
-<pre><code>{
-  &quot;plugins&quot;: [ &quot;chart&quot; ],
-  &quot;pluginsConfig&quot;: {
-      &quot;chart&quot;: {
-          &quot;type&quot;: &quot;c3&quot;
-      }
-  }
-}
-</code></pre><p><code>type</code> can be <code>c3</code> or <code>highcharts</code>, default to <code>c3</code>.</p>
-<h3 id="example-for-c3js">Example for C3.js</h3>
-<p><div>
-                    <div id="plugin-chart-1"></div>
-                    <script>c3.generate({"bindto":"#plugin-chart-1",
-    "data": {
-        "type": "bar",
-        "columns": [
-            ["data1", 30, 200, 100, 400, 150, 1500, 2500],
-            ["data2", 50, 100, 300, 450, 650, 250, 1320]
-        ]
-    },
-    "axis": {
-        "y": {
-            "tick": {
-                "format": d3.format("$,")
-            }
-        }
-    }
-});</script>
-                </div></p>
-<h3 id="example-for-c3js-in-yaml">Example for C3.js in YAML</h3>
-<p><div>
-                    <div id="plugin-chart-2"></div>
-                    <script>c3.generate({"bindto":"#plugin-chart-2","data":{"type":"bar","columns":[["data1",30,200,100,400,150,250],["data2",50,20,10,40,15,25]],"axes":{"data2":"y2"}},"axis":{"y2":{"show":true}}});</script>
-                </div></p>
+                                <h1 id="retriesapps">retries.apps</h1>
+<h2 id="retriesconfig">RetriesConfig</h2>
+<pre><code class="lang-python">RetriesConfig(self, app_name, app_module)
+</code></pre>
+<p>Test Docstrings creation by pydoc-markdown</p>
 
                                 
                                 </section>
@@ -315,14 +281,10 @@
 
             
                 
-                <a href="../../mermaidjs/" class="navigation navigation-prev " aria-label="Previous page: Mermaidjs">
+                <a href="../../gitbook/chart/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: C3 Chart">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../../projects/retries/apps.html" class="navigation navigation-next " aria-label="Next page: Retries | apps">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -331,37 +293,37 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"C3 Chart","level":"3.2","depth":1,"next":{"title":"Retries | apps","level":"4.1","depth":1,"path":"projects/retries/apps.md","ref":"projects/retries/apps.md","articles":[]},"previous":{"title":"Mermaidjs","level":"3.1","depth":1,"path":"mermaidjs/README.md","ref":"mermaidjs/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"gitbook/chart/README.md","mtime":"2019-02-01T07:32:34.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T07:47:49.281Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Retries | apps","level":"4.1","depth":1,"previous":{"title":"C3 Chart","level":"3.2","depth":1,"path":"gitbook/chart/README.md","ref":"gitbook/chart/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"projects/retries/apps.md","mtime":"2019-02-01T07:44:51.481Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T07:47:49.281Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    <script src="../gitbook.js"></script>
-    <script src="../theme.js"></script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="../gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="../gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="../gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
         
     
         
-        <script src="../gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 
