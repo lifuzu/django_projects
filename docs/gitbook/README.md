@@ -8,6 +8,11 @@ $ npm i -g gitbook-cli
 $ gitbook init
 ```
 
+### Install GitBook plugins
+```
+$ gitbook install
+```
+
 ### Run `gitbook serve` to create a static site
 ```
 $ gitbook serve

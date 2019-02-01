@@ -3,5 +3,10 @@
     "styles": {
         "website": "gitbook.css"
     },
-    "plugins": ["mermaid-flow"]
+    "plugins": ["mermaid-flow", "chart"],
+    "pluginsConfig": {
+        "chart": {
+            "type": "c3"
+        }
+    }
 }

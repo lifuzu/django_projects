@@ -13,5 +13,7 @@
 
 * [Mermaidjs](mermaidjs/README.md)
 
+* [C3 Chart](gitbook/chart/README.md)
+
 
 
