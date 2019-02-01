@@ -26,6 +26,62 @@ secret/kubeless-secret created
 Via CloudFlare's SSL ToolKit:
 Reference: docs/certs/ssl_toolkit.md
 
+Create a kubeless-csr.json file under `tools/certs/config`:
+```
+├── certs
+│   ├── config
+│   │   ├── ca-config.json
+│   │   ├── ca-csr.json
+│   │   ├── consul-csr.json
+│   │   ├── vault-csr.json
+|   |   └── kubeless-csr.json
+```
+kubeless-csr.json
+with the following content:
+```
+{
+  "CN": "rili.local.com",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "ST": "Colorado",
+      "L": "Denver"
+    }
+  ]
+}
+```
+Then, create a private key and a TLS certificate for Kubeless:
+```
+$ cfssl gencert \
+    -ca=tools/certs/ca.pem \
+    -ca-key=tools/certs/ca-key.pem \
+    -config=tools/certs/config/ca-config.json \
+    -profile=default \
+    tools/certs/config/kubeless-csr.json | cfssljson -bare tools/certs/kubeless
+2019/01/31 09:15:40 [INFO] generate received request
+2019/01/31 09:15:40 [INFO] received CSR
+2019/01/31 09:15:40 [INFO] generating key: rsa-2048
+2019/01/31 09:15:40 [INFO] encoded CSR
+2019/01/31 09:15:40 [INFO] signed certificate with serial number 244614306373872034666377206896126913608658883318
+2019/01/31 09:15:40 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
+```
+[TODO:] Store the TLS certificates in a Secret:
+```
+$ kubectl create secret tls kubeless \
+    --from-file=tools/certs/ca.pem \
+    --from-file=tools/certs/kubeless.pem \
+    --from-file=tools/certs/kubeless-key.pem
+secret/kubeless created
+```
+
+
 ## Provided by a certificate issuer
 TODO:
 
