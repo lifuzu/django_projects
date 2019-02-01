@@ -2,5 +2,6 @@
     "root": "./docs",
     "styles": {
         "website": "gitbook.css"
-    }
+    },
+    "plugins": ["mermaid-flow"]
 }
