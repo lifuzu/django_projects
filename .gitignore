@@ -1,0 +1,10 @@
+htmlcov
+.coverage
+.babelrc
+.dockerignore
+.env
+node_modules/
+static/
+_book/
+
+dump.rdb

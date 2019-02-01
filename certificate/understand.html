@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Certificate · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../gitbook.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="understand.html" />
+    
+    
+    <link rel="prev" href="../celery/install.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../celery/install.html">
+            
+                <a href="../celery/install.html">
+            
+                    
+                    Celery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="understand.html">
+            
+                <a href="understand.html">
+            
+                    
+                    Certificate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="understand.html">
+            
+                <a href="understand.html#self-signed">
+            
+                    
+                    Self signed certificate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Certificate</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>TLS - Transport-Level Security</p>
+<h2 id="automatically-generated-using-lets-encrypt-and-cert-manager">Automatically generated using Let&apos;s Encrypt and cert-manager</h2>
+<p><a href="https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html" target="_blank">https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html</a></p>
+<p>When you have running cert-manager, you can deploy function and create an HTTP trigger with flag --enableTLSAcme enabled as below:</p>
+<pre><code>$ kubeless trigger http create get-python --function-name get-python --path get-python --enableTLSAcme
+</code></pre><p>Running the above command, Kubeless will automatically create a ingress object with annotation kubernetes.io/tls-acme: &apos;true&apos; set which will be used by cert-manager to configure the service certificate.</p>
+<h2 id="self-signed">Self-signed certificate </h2>
+<p>Via command <code>openssl</code>:</p>
+<pre><code>$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tools/certs/kubeless.key -out tools/certs/kubeless.crt -subj &quot;/CN=rili.local.com&quot;
+Generating a 2048 bit RSA private key
+..........................................................................................+++
+........................................+++
+writing new private key to &apos;tools/certs/kubeless.key&apos;
+-----
+
+$ kubectl create secret tls kubeless-secret --key tools/certs/kubeless.key --cert tools/certs/kubeless.crt
+secret/kubeless-secret created
+</code></pre><p>Via CloudFlare&apos;s SSL ToolKit:
+Reference: docs/certs/ssl_toolkit.md</p>
+<p>Create a kubeless-csr.json file under <code>tools/certs/config</code>:</p>
+<pre><code>&#x251C;&#x2500;&#x2500; certs
+&#x2502;   &#x251C;&#x2500;&#x2500; config
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; ca-config.json
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; ca-csr.json
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; consul-csr.json
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; vault-csr.json
+|   |   &#x2514;&#x2500;&#x2500; kubeless-csr.json
+</code></pre><p>kubeless-csr.json
+with the following content:</p>
+<pre><code>{
+  &quot;CN&quot;: &quot;rili.local.com&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;ST&quot;: &quot;Colorado&quot;,
+      &quot;L&quot;: &quot;Denver&quot;
+    }
+  ]
+}
+</code></pre><p>Then, create a private key and a TLS certificate for Kubeless:</p>
+<pre><code>$ cfssl gencert \
+    -ca=tools/certs/ca.pem \
+    -ca-key=tools/certs/ca-key.pem \
+    -config=tools/certs/config/ca-config.json \
+    -profile=default \
+    tools/certs/config/kubeless-csr.json | cfssljson -bare tools/certs/kubeless
+2019/01/31 09:15:40 [INFO] generate received request
+2019/01/31 09:15:40 [INFO] received CSR
+2019/01/31 09:15:40 [INFO] generating key: rsa-2048
+2019/01/31 09:15:40 [INFO] encoded CSR
+2019/01/31 09:15:40 [INFO] signed certificate with serial number 244614306373872034666377206896126913608658883318
+2019/01/31 09:15:40 [WARNING] This certificate lacks a &quot;hosts&quot; field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 (&quot;Information Requirements&quot;).
+</code></pre><p>[TODO:] Store the TLS certificates in a Secret:</p>
+<pre><code>$ kubectl create secret tls kubeless \
+    --from-file=tools/certs/ca.pem \
+    --from-file=tools/certs/kubeless.pem \
+    --from-file=tools/certs/kubeless-key.pem
+secret/kubeless created
+</code></pre><h2 id="provided-by-a-certificate-issuer">Provided by a certificate issuer</h2>
+<p>TODO:</p>
+<h2 id="use-an-existingcreated-certificate-to-setup-tls-for-the-http-trigger-there-by-securing-functions">Use an existing/created certificate to setup TLS for the HTTP trigger, there by securing functions:</h2>
+<pre><code>$ kubeless trigger http create hello --function-name hello --path echo --hostname rili.local.com --tls-secret kubeless-secret
+INFO[0000] HTTP trigger hello created in namespace default successfully!
+</code></pre><p>If the trigger exists (<code>Error: httptriggers.kubeless.io &quot;hello&quot; already exists</code>), remove it at first:</p>
+<pre><code>$ kubeless trigger http delete hello
+INFO[0000] HTTP trigger hello deleted from namespace default successfully!
+</code></pre><p>If running on Minikube, need to config hosts with Minikube IP address</p>
+<pre><code>$ echo &quot;$(minikube ip) rili.local.com&quot; | sudo tee -a /etc/hosts
+</code></pre><p>Once the Ingress rule has been deployed you can verify that the function is accessible trough HTTPS:</p>
+<pre><code>$ kubectl get ingress
+NAME    HOSTS            ADDRESS     PORTS     AGE
+hello   rili.local.com   10.0.2.15   80, 443   78s
+
+$ curl --data &apos;{&quot;Another&quot;: &quot;Echo&quot;}&apos; -k https://rili.local.com/echo
+{&quot;Another&quot;: &quot;Echo&quot;}
+</code></pre><h3 id="file-extensions-can-be-very-loosely-seen-as-a-type-system">File extensions can be (very) loosely seen as a type system.</h3>
+<ul>
+<li>.pem stands for PEM, Privacy Enhanced Mail; it simply indicates a base64 encoding with header and footer lines. Mail traditionally only handles text, not binary which most cryptographic data is, so some kind of encoding is required to make the contents part of a mail message itself (rather than an encoded attachment). The contents of the PEM are detailed in the header and footer line - .pem itself doesn&apos;t specify a data type - just like .xml and .html do not specify the contents of a file, they just specify a specific encoding;</li>
+<li>.key can be any kind of key, but usually it is the private key - OpenSSL can wrap private keys for all algorithms (RSA, DSA, EC) in a generic and standard PKCS#8 structure, but it also supports a separate &apos;legacy&apos; structure for each algorithm, and both are still widely used even though the documentation has marked PKCS#8 as superior for almost 20 years; both can be stored as DER (binary) or PEM encoded, and both PEM and PKCS#8 DER can protect the key with password-based encryption or be left unencrypted;</li>
+<li>.csr stands for Certificate Signing Request, it contains information such as the public key and common name required by a Certificate Authority to create and sign a certificate for the requester, the encoding could be PEM or DER (which is a binary encoding of an ASN.1 specified structure);</li>
+<li>.crt stands simply for certificate, usually an X509v3 certificate, again the encoding could be PEM or DER; a certificate contains the public key, but it contains much more information (most importantly the signature by the Certificate Authority over the data and public key, of course).</li>
+</ul>
+<p>Beware that not everyone may use the same extensions - there is no official register or anything like that. You&apos;re probably better off using the POSIX file command line utility first.</p>
+<p><a href="https://crypto.stackexchange.com/questions/43697/what-is-the-difference-between-pem-csr-key-and-crt" target="_blank">https://crypto.stackexchange.com/questions/43697/what-is-the-difference-between-pem-csr-key-and-crt</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../celery/install.html" class="navigation navigation-prev " aria-label="Previous page: Celery">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="understand.html#self-signed" class="navigation navigation-next " aria-label="Next page: Self signed certificate">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Certificate","level":"2.2","depth":1,"next":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"previous":{"title":"Celery","level":"2.1","depth":1,"path":"celery/install.md","ref":"celery/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"certificate/understand.md","mtime":"2019-02-01T04:26:07.048Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T04:54:00.865Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
