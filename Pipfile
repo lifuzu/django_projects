@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pydoc-markdown = "*"
+pdoc3 = "*"
 
 [packages]
 django = "*"

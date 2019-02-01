@@ -26,6 +26,10 @@
  - [ ] Setting up Celery Beats
  - [ ] NATS
  - [x] GitBook
+ - [ ] Document - http://hyperpolyglot.org/lightweight-markup
+ - [x] Pydoc-markdown
+ - [x] pdoc3
+ - [ ] pydoc - https://docs.python.org/3.7/library/pydoc.html
 
  - [ ] Refactor upload with React
  - [ ] Kubeless UI - https://github.com/kubeless/kubeless-ui
