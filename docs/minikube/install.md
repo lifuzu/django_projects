@@ -14,11 +14,23 @@ $ brew cask install virtualbox
 $ brew cask install minikube
 ```
 
-Then, start the cluster and pull up the Minikube dashboard:
+Then, start the cluster:
 ```
 $ minikube start  # or minikube start --vm-driver=hyperkit
+```
+
+Pull up the Minikube dashboard (Web UI)
+```
 $ minikube dashboard
 ```
+the Web UI here:
+http://127.0.0.1:49327/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/
+OR
+```
+$ kubectl proxy --port=8123
+```
+which will pull up the dashboard with the Web UI here:
+http://localhost:8123/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/
 
 Stop the minikube cluster:
 ```
