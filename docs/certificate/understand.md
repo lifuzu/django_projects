@@ -72,22 +72,23 @@ websites. For more information see the Baseline Requirements for the Issuance an
 of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
 specifically, section 10.2.3 ("Information Requirements").
 ```
-[TODO:] Store the TLS certificates in a Secret:
+Store the TLS certificates in a Secret:
 ```
-$ kubectl create secret tls kubeless \
-    --from-file=tools/certs/ca.pem \
-    --from-file=tools/certs/kubeless.pem \
-    --from-file=tools/certs/kubeless-key.pem
-secret/kubeless created
+$ kubectl create secret tls kubeless-another-secret \
+    --key tools/certs/kubeless-key.pem --cert tools/certs/kubeless.pem
+secret/kubeless-another-secret created
 ```
 
 
 ## Provided by a certificate issuer
 TODO:
 
+
 ## Use an existing/created certificate to setup TLS for the HTTP trigger, there by securing functions:
 ```
 $ kubeless trigger http create hello --function-name hello --path echo --hostname rili.local.com --tls-secret kubeless-secret
+# OR
+$ kubeless trigger http create hello --function-name hello --path echo --hostname rili.local.com --tls-secret kubeless-another-secret
 INFO[0000] HTTP trigger hello created in namespace default successfully!
 ```
 If the trigger exists (`Error: httptriggers.kubeless.io "hello" already exists `), remove it at first:
@@ -108,6 +109,11 @@ hello   rili.local.com   10.0.2.15   80, 443   78s
 
 $ curl --data '{"Another": "Echo"}' -k https://rili.local.com/echo
 {"Another": "Echo"}
+```
+
+### Display which secret using:
+```
+echo | openssl s_client -showcerts -servername rili.local.com -connect rili.local.com:443 2>/dev/null | openssl x509 -inform pem -noout -text
 ```
 
 

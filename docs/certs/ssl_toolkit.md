@@ -152,3 +152,10 @@ $ cfssl gencert \
 2019/01/29 21:27:26 [INFO] encoded CSR
 2019/01/29 21:27:26 [INFO] signed certificate with serial number 473052007023399167394143586921815148264579234061
 ```
+
+From the output of CloudFlare's SSL ToolKit:
+```
+--tlscert=/etc/docker/server.pem -- TLS certificate file
+--tlskey=/etc/docker/server-key.pem -- TLS key file
+```
+Learning from: https://github.com/kelseyhightower/docker-kubernetes-tls-guide
