@@ -12,6 +12,6 @@ kombu==4.2.2.post1
 psycopg2-binary==2.7.7
 python-dotenv==0.10.1
 pytz==2018.9
-redis==3.0.1
+redis==3.1.0
 tornado==5.1.1
 vine==1.2.0
