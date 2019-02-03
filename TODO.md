@@ -10,7 +10,6 @@
  - [ ] Fabric
  - [ ] Ansible
  - [ ] Chef
- - [ ] Traefik
  - [x] Vault
  - [x] Consul
  - [x] Kubeless
@@ -18,6 +17,11 @@
  - [ ] Telepresence
  - [ ] TLS
  - [ ] Authentication
+
+ - [ ] HAProxy - https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/
+ - [ ] Traefik
+ - [ ] Nginx
+ - [ ] Kong - https://docs.konghq.com
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK

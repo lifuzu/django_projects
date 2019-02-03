@@ -9,8 +9,6 @@
 * [Certificate](certificate/understand.md)
     * [Self signed certificate](certificate/understand.md#self-signed)
 
-* [Ambassador](ambassador/README.md)
-
 ### Playground
 
 * [Mermaidjs](mermaidjs/README.md)
@@ -20,6 +18,12 @@
 ### Project Modules
 
 * [Retries | apps](projects/retries/apps.md)
+
+### Ingress
+
+* [Ingress](ingress/Install.md)
+
+* [Ambassador](ambassador/README.md)
 
 
 

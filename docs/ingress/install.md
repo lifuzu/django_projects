@@ -1,4 +1,5 @@
 #Ingress controller
+https://kubernetes.io/docs/concepts/services-networking/ingress
 
 ### Minikube Ingress addon
 If your cluster is running in Minikube you can enable the Ingress controller just executing:
@@ -36,5 +37,20 @@ NAME                                          READY     STATUS    RESTARTS   AGE
 traefik-ingress-controller-57b4767f99-g42n2   1/1       Running   0          1m
 ```
 
+### HAProxy Ingress
+https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/
+
 ### Ambassador/Envoy Ingress
-TODO: https://www.getambassador.io/user-guide
+[Ambassador](../ambassador/README.md)
+
+## Ingress controllers
+- Kubernetes as a project currently supports and maintains GCE and nginx controllers.
+- Contour is an Envoy based ingress controller provided and supported by Heptio.
+- Citrix provides an Ingress Controller for its hardware (MPX), virtualized (VPX) and free containerized (CPX) ADC for baremetal and cloud deployments.
+- F5 Networks provides support and maintenance for the F5 BIG-IP Controller for Kubernetes.
+- Gloo is an open-source ingress controller based on Envoy which offers API Gateway functionality with enterprise support from solo.io.
+- HAProxy based ingress controller jcmoraisjr/haproxy-ingress which is mentioned on the blog post HAProxy Ingress Controller for Kubernetes. HAProxy Technologies offers support and maintenance for HAProxy Enterprise and the ingress controller jcmoraisjr/haproxy-ingress.
+- Istio based ingress controller Control Ingress Traffic.
+- Kong offers community or commercial support and maintenance for the Kong Ingress Controller for Kubernetes.
+- NGINX, Inc. offers support and maintenance for the NGINX Ingress Controller for Kubernetes.
+- Traefik is a fully featured ingress controller (Let’s Encrypt, secrets, http2, websocket), and it also comes with commercial support by Containous.
