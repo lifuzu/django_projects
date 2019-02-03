@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# save the context if there is some edited file(s)
+git stash
+
 # install the gitbook plugins and build the status site
 gitbook install && gitbook build
 
@@ -18,3 +21,6 @@ git push origin gh-pages
 
 # checkout back to code branch - master
 git checkout master
+
+# restore the context if any
+git stash pop
