@@ -1,4 +1,3 @@
-TLS - Transport-Level Security
 
 ## Automatically generated using Let's Encrypt and cert-manager
 https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html

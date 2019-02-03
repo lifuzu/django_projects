@@ -17,6 +17,8 @@ $ brew cask install minikube
 Then, start the cluster:
 ```
 $ minikube start  # or minikube start --vm-driver=hyperkit
+# Start the cluster with RBAC enabled
+$ minikube start --extra-config=apiserver.authorization-mode=RBAC
 ```
 
 Pull up the Minikube dashboard (Web UI)
@@ -68,6 +70,11 @@ Check pods in minikube:
 $ kubectl get pod -n kube-system
 ```
 
+On Minikube, the `LoadBalancer` type makes the Service accessible through the `minikube service` command:
+```
+$ minikube service <service_name>
+```
+
 Other misc commands:
 ```
 $ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
@@ -102,6 +109,7 @@ deployment "hello-minikube" deleted
 https://gist.github.com/F21/08bfc2e3592bed1e931ec40b8d2ab6f5
 ```
 $ minikube start --extra-config=apiserver.authorization-mode=RBAC
+# https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 $ kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
 ```
 

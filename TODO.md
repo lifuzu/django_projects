@@ -14,7 +14,7 @@
  - [x] Vault
  - [x] Consul
  - [x] Kubeless
- - [ ] Ambassador
+ - [x] Ambassador
  - [ ] Telepresence
  - [ ] TLS
  - [ ] Authentication
