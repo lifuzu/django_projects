@@ -54,3 +54,6 @@ https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/
 - Kong offers community or commercial support and maintenance for the Kong Ingress Controller for Kubernetes.
 - NGINX, Inc. offers support and maintenance for the NGINX Ingress Controller for Kubernetes.
 - Traefik is a fully featured ingress controller (Let’s Encrypt, secrets, http2, websocket), and it also comes with commercial support by Containous.
+
+## Multiple Ingress controllers
+https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/multiple-ingress.md

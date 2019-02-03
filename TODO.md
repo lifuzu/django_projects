@@ -14,6 +14,7 @@
  - [x] Consul
  - [x] Kubeless
  - [x] Ambassador
+ - [ ] Jenkins
  - [ ] Telepresence
  - [ ] TLS
  - [ ] Authentication
@@ -22,6 +23,7 @@
  - [ ] Traefik
  - [ ] Nginx
  - [ ] Kong - https://docs.konghq.com
+ - [ ] Envoy - https://www.envoyproxy.io
 
  - [x] Create deploy USER and deployemnt HOME in Docker
  - [ ] Docker compose ELK
@@ -29,6 +31,16 @@
  - [ ] Celery log management
  - [ ] Setting up Celery Beats
  - [ ] NATS
+ - [ ] Kafka
+
+ - [ ] Prometheus - https://prometheus.io/docs/introduction/overview/
+ - [ ] Fluentd
+ - [ ] Grafana
+
+ - [ ] Weave Scope - https://www.weave.works/docs/scope/latest/introducing/
+
+ - [ ] CoreDNS
+
  - [x] GitBook
  - [ ] Document - http://hyperpolyglot.org/lightweight-markup
  - [x] Pydoc-markdown
@@ -38,6 +50,10 @@
  - [ ] Refactor upload with React
  - [ ] Kubeless UI - https://github.com/kubeless/kubeless-ui
 
+ - [ ] Cilium - https://github.com/cilium/cilium
+
+ - [ ] Network Policy - https://kubernetes.io/docs/concepts/services-networking/network-policies/
+ - [ ] Services - https://kubernetes.io/docs/concepts/services-networking/service/
 
 ### TODO: Create deploy USER and deployemnt HOME
 ```
