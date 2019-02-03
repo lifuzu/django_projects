@@ -153,6 +153,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.3" data-path="../ambassador/">
+            
+                <a href="../ambassador/">
+            
+                    
+                    Ambassador
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -251,12 +264,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>TLS - Transport-Level Security</p>
-<h2 id="automatically-generated-using-lets-encrypt-and-cert-manager">Automatically generated using Let&apos;s Encrypt and cert-manager</h2>
+                                <h2 id="automatically-generated-using-lets-encrypt-and-cert-manager">Automatically generated using Let&apos;s Encrypt and cert-manager</h2>
 <p><a href="https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html" target="_blank">https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html</a></p>
 <p>When you have running cert-manager, you can deploy function and create an HTTP trigger with flag --enableTLSAcme enabled as below:</p>
 <pre><code>$ kubeless trigger http create get-python --function-name get-python --path get-python --enableTLSAcme
-</code></pre><p>Running the above command, Kubeless will automatically create a ingress object with annotation kubernetes.io/tls-acme: &apos;true&apos; set which will be used by cert-manager to configure the service certificate.</p>
+</code></pre><p>Running the above command, Kubeless will automatically create a ingress object with annotation kubernetes.io/<a href="../GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">tls</a>-acme: &apos;true&apos; set which will be used by cert-manager to configure the service certificate.</p>
 <h2 id="self-signed">Self-signed certificate </h2>
 <p>Via command <code>openssl</code>:</p>
 <pre><code>$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tools/certs/kubeless.key -out tools/certs/kubeless.crt -subj &quot;/CN=rili.local.com&quot;
@@ -294,7 +306,7 @@ with the following content:</p>
     }
   ]
 }
-</code></pre><p>Then, create a private key and a TLS certificate for Kubeless:</p>
+</code></pre><p>Then, create a private key and a <a href="../GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">TLS</a> certificate for Kubeless:</p>
 <pre><code>$ cfssl gencert \
     -ca=tools/certs/ca.pem \
     -ca-key=tools/certs/ca-key.pem \
@@ -310,16 +322,16 @@ with the following content:</p>
 websites. For more information see the Baseline Requirements for the Issuance and Management
 of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
 specifically, section 10.2.3 (&quot;Information Requirements&quot;).
-</code></pre><p>[TODO:] Store the TLS certificates in a Secret:</p>
-<pre><code>$ kubectl create secret tls kubeless \
-    --from-file=tools/certs/ca.pem \
-    --from-file=tools/certs/kubeless.pem \
-    --from-file=tools/certs/kubeless-key.pem
-secret/kubeless created
+</code></pre><p>Store the <a href="../GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">TLS</a> certificates in a Secret:</p>
+<pre><code>$ kubectl create secret tls kubeless-another-secret \
+    --key tools/certs/kubeless-key.pem --cert tools/certs/kubeless.pem
+secret/kubeless-another-secret created
 </code></pre><h2 id="provided-by-a-certificate-issuer">Provided by a certificate issuer</h2>
 <p>TODO:</p>
 <h2 id="use-an-existingcreated-certificate-to-setup-tls-for-the-http-trigger-there-by-securing-functions">Use an existing/created certificate to setup TLS for the HTTP trigger, there by securing functions:</h2>
 <pre><code>$ kubeless trigger http create hello --function-name hello --path echo --hostname rili.local.com --tls-secret kubeless-secret
+# OR
+$ kubeless trigger http create hello --function-name hello --path echo --hostname rili.local.com --tls-secret kubeless-another-secret
 INFO[0000] HTTP trigger hello created in namespace default successfully!
 </code></pre><p>If the trigger exists (<code>Error: httptriggers.kubeless.io &quot;hello&quot; already exists</code>), remove it at first:</p>
 <pre><code>$ kubeless trigger http delete hello
@@ -333,6 +345,8 @@ hello   rili.local.com   10.0.2.15   80, 443   78s
 
 $ curl --data &apos;{&quot;Another&quot;: &quot;Echo&quot;}&apos; -k https://rili.local.com/echo
 {&quot;Another&quot;: &quot;Echo&quot;}
+</code></pre><h3 id="display-which-secret-using">Display which secret using:</h3>
+<pre><code>echo | openssl s_client -showcerts -servername rili.local.com -connect rili.local.com:443 2&gt;/dev/null | openssl x509 -inform pem -noout -text
 </code></pre><h3 id="file-extensions-can-be-very-loosely-seen-as-a-type-system">File extensions can be (very) loosely seen as a type system.</h3>
 <ul>
 <li>.pem stands for PEM, Privacy Enhanced Mail; it simply indicates a base64 encoding with header and footer lines. Mail traditionally only handles text, not binary which most cryptographic data is, so some kind of encoding is required to make the contents part of a mail message itself (rather than an encoded attachment). The contents of the PEM are detailed in the header and footer line - .pem itself doesn&apos;t specify a data type - just like .xml and .html do not specify the contents of a file, they just specify a specific encoding;</li>
@@ -385,7 +399,7 @@ $ curl --data &apos;{&quot;Another&quot;: &quot;Echo&quot;}&apos; -k https://ril
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Certificate","level":"2.2","depth":1,"next":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"previous":{"title":"Celery","level":"2.1","depth":1,"path":"celery/install.md","ref":"celery/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"certificate/understand.md","mtime":"2019-02-01T07:32:34.207Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T07:47:49.281Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Certificate","level":"2.2","depth":1,"next":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"previous":{"title":"Celery","level":"2.1","depth":1,"path":"celery/install.md","ref":"celery/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"certificate/understand.md","mtime":"2019-02-03T06:21:35.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-03T06:40:01.131Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -138,6 +138,19 @@ $ kubectl logs -n kubeless -l kubeless=controller -c kubeless-function-controlle
 time="2019-01-31T04:42:09Z" level=info msg="Running Kubeless controller manager version: v1.0.1"
 time="2019-01-31T04:42:09Z" level=fatal msg="Unable to read the configmap: Error while fetching config location: customresourcedefinitions.apiextensions.k8s.io \"functions.kubeless.io\" is forbidden: User \"system:serviceaccount:kubeless:controller-acct\" cannot get resource \"customresourcedefinitions\" in API group \"apiextensions.k8s.io\" at the cluster scope"
 ```
+OR
+### Get pods and check logs the pod, like:
+```
+$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+...
+hello-779487cc4d-wszpw   1/1     Running   1          2d
+...
+$ kubectl logs hello-779487cc4d-wszpw
+...
+172.17.0.1 - - [02/Feb/2019:05:52:07 +0000] "GET /healthz HTTP/1.1" 200 2 "" "kube-probe/1.13" 0/107
+172.17.0.1 - - [02/Feb/2019:05:52:37 +0000] "GET /healthz HTTP/1.1" 200 2 "" "kube-probe/1.13" 0/266
+```
 
 ### Delete namespace
 ```
