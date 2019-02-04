@@ -19,8 +19,8 @@
  - [x] TLS / certificate
  - [ ] Authentication
  - [ ] Habitat-operator - https://github.com/habitat-sh/habitat-operator
- - [ ] DockerHub Registry - https://www.linux.com/blog/learn/chapter/Intro-to-Kubernetes/2017/5/set-cicd-pipeline-kubernetes-part-1-overview
- - [ ] socat
+ - [x] DockerHub Registry - https://www.linux.com/blog/learn/chapter/Intro-to-Kubernetes/2017/5/set-cicd-pipeline-kubernetes-part-1-overview
+ - [x] socat
 
  - [ ] HAProxy - https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/
  - [ ] Traefik
@@ -45,6 +45,7 @@
  - [ ] CoreDNS
 
  - [x] GitBook
+ - [ ] GitBook plugin - alerts - https://www.npmjs.com/package/gitbook-plugin-flexible-alerts
  - [ ] Document - http://hyperpolyglot.org/lightweight-markup
  - [x] Pydoc-markdown
  - [x] pdoc3
@@ -57,6 +58,8 @@
 
  - [ ] Network Policy - https://kubernetes.io/docs/concepts/services-networking/network-policies/
  - [ ] Services - https://kubernetes.io/docs/concepts/services-networking/service/
+
+ - [ ] Nodejs / Steps - https://github.com/kenzanlabs/kubernetes-ci-cd/blob/master/start.js
 
 ### TODO: Create deploy USER and deployemnt HOME
 ```
