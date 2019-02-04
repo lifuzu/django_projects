@@ -21,3 +21,6 @@ $ docker stop socat-proxy
 ```
 $ docker rm socat-proxy
 ```
+
+### References:
+- https://medium.com/@copyconstruct/socat-29453e9fc8a6
