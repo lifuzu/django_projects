@@ -46,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: registry-ui
+  name: registry-webui
   labels:
     app: registry
 spec:
