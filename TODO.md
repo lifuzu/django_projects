@@ -14,7 +14,7 @@
  - [x] Consul
  - [x] Kubeless
  - [x] Ambassador
- - [ ] Jenkins
+ - [x] Jenkins
  - [ ] Telepresence
  - [x] TLS / certificate
  - [ ] Authentication
@@ -60,6 +60,8 @@
  - [ ] Services - https://kubernetes.io/docs/concepts/services-networking/service/
 
  - [ ] Nodejs / Steps - https://github.com/kenzanlabs/kubernetes-ci-cd/blob/master/start.js
+
+ - [ ] Vue/Django - https://eldarion.com/blog/2018/10/09/setup-guide-django-vue-webpack/
 
 ### TODO: Create deploy USER and deployemnt HOME
 ```
