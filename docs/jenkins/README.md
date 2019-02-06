@@ -53,7 +53,7 @@ $ minikube service jenkins
 ```
 $ kubectl exec -it `kubectl get pods --selector=app=jenkins --output=jsonpath={.items..metadata.name}` cat /var/jenkins_home/secrets/initialAdminPassword
 ...
-edadcf9de1174a9794d2dcf52d8e0ea3
+c3727421d8044290902bca000bed7b22
 ...
 ```
 
@@ -69,4 +69,41 @@ lifuzu+jenkins@gmail
 
 ### On the Instance Configuration page, click Save and Finish. On the next page, click Restart (if it appears to hang for some time on restarting, you may have to refresh the browser window). Login to Jenkins.
 
-###
+### Before we create a pipeline, we first need to provision the Kubernetes Continuous Deploy plugin with a kubeconfig file that will allow access to our Kubernetes cluster. In Jenkins on the left, click on `Credentials`, select the `Jenkins` store, then `Global credentials (unrestricted)`, and `Add Credentials` on the left menu
+
+### The following values must be entered precisely as indicated:
+
+Kind: `Kubernetes configuration (kubeconfig)`
+
+ID: `app_kubeconfig`
+
+Kubeconfig: `From a file on the Jenkins master`
+
+File: `/var/jenkins_home/.kube/config`
+
+Finally click `Ok`.
+
+### We now want to create a new `pipeline` for use with our `Hello` app. Back on Jenkins Home, on the left, click `New Item`.
+
+### Enter the item name as `Hello Pipeline`, select `Pipeline`, and click `OK`.
+
+### Under the Pipeline section at the bottom, change the Definition to be `Pipeline script from SCM`.
+
+### Change the SCM to Git. Change the Repository URL to be the URL of your forked Git repository, such as `https://github.com/forkhome/kubernetes-ci-cd`.
+
+### Click `Save`. On the left, click `Build Now` to run the new pipeline. You should see it run through the build, push, and deploy steps in a few seconds.
+
+### After all pipeline stages are colored green as complete, view the Hello application.
+```
+minikube service hello-cicd
+```
+
+NOTE: make sure the IP address in `tools/provision/manifests/jenkins.yaml` line #62 is the IP address when you run `minikube ip`, like:
+```
+$ minikube ip
+192.168.99.110
+```
+Keep the IP address in the above file SAME:
+```
+kubectl config set-cluster minikube --server="https://192.168.99.110:8443" ...
+```

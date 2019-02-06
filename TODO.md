@@ -11,6 +11,7 @@
  - [ ] Ansible
  - [ ] Chef
  - [x] Vault
+ - [ ] Using Vault - https://github.com/Boostport/kubernetes-vault/blob/master/deployments/quick-start/README.md
  - [x] Consul
  - [x] Kubeless
  - [x] Ambassador

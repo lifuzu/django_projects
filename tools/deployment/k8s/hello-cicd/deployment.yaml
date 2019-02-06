@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-cicd
+  labels:
+    app: hello-cicd
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: hello-cicd
+    tier: hello-cicd
+  type: NodePort
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-cicd
+  labels:
+    app: hello-cicd
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: hello-cicd
+        tier: hello-cicd
+    spec:
+      containers:
+      - image: 127.0.0.1:30400/hello-cicd:$BUILD_TAG
+        name: hello-cicd
+        ports:
+        - containerPort: 80
+          name: hello-cicd

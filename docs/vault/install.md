@@ -1,4 +1,5 @@
 ### Install
+https://testdriven.io/blog/running-vault-and-consul-on-kubernetes/
 
 Store the Vault TLS certificates that we created (docs/certs/ssl_toolkit.md) in a Secret:
 ```
@@ -210,4 +211,23 @@ Cluster ID      ae1e27f6-45b3-b5a0-3062-4752ce5dc18b
 HA Enabled      true
 HA Cluster      https://127.0.0.1:8201
 HA Mode         active
+```
+
+Clean up:
+```
+$ kubectl delete \
+    -f tools/provision/vault/deployment.yaml \
+    -f tools/provision/vault/service.yaml
+```
+
+List Vault pods:
+```
+$ kubectl get pods -l app=vault
+NAME                     READY   STATUS    RESTARTS   AGE
+vault-69c7d8bcdd-l4hgl   2/2     Running   16         6d10h
+```
+
+Delete Vault pods:
+```
+$ kubectl delete pods -l app=vault
 ```
