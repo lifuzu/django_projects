@@ -22,5 +22,5 @@ node {
 
     stage "Deploy"
 
-        kubernetesDeploy configs: "tools/deployment/k8s/${appName}/*.yaml", kubeconfigId: 'app_kubeconfig'
+        kubernetesDeploy configs: "tools/deployment/k8s/${appName}/deployment.yaml", kubeconfigId: 'app_kubeconfig'
 }
