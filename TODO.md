@@ -7,11 +7,14 @@
  - [ ] Habitat
  - [ ] Ksonnet
  - [ ] Helm
+
  - [ ] Fabric
  - [ ] Ansible
  - [ ] Chef
- - [x] Vault
- - [ ] Using Vault - https://github.com/Boostport/kubernetes-vault/blob/master/deployments/quick-start/README.md
+ - [ ] Terraform
+
+ - [x] Vault - https://www.vaultproject.io/docs/internals/architecture.html
+ - [ ] Using Vault with Approle - https://github.com/Boostport/kubernetes-vault/blob/master/deployments/quick-start/README.md
  - [x] Consul
  - [x] Kubeless
  - [x] Ambassador
