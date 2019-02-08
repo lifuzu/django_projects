@@ -5,13 +5,15 @@
  - [x] Docker-compose.yml
  - [x] Minikube
  - [ ] Habitat
+ - [ ] Habitat/on-prem-builder - https://github.com/habitat-sh/on-prem-builder
+ - [ ] Habitat-operator
  - [ ] Ksonnet
  - [ ] Helm
 
  - [ ] Fabric
  - [ ] Ansible
  - [ ] Chef
- - [ ] Terraform
+ - [x] Terraform
 
  - [x] Vault - https://www.vaultproject.io/docs/internals/architecture.html
  - [ ] Using Vault with Approle - https://github.com/Boostport/kubernetes-vault/blob/master/deployments/quick-start/README.md
