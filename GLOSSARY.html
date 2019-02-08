@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -149,19 +153,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="ambassador/">
-            
-                <a href="ambassador/">
-            
-                    
-                    Ambassador
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
         
@@ -195,6 +186,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.3" data-path="gitbook/flexible-alerts/">
+            
+                <a href="gitbook/flexible-alerts/">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -208,6 +212,39 @@
             
                     
                     Retries | apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ingress</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="ingress/Install.html">
+            
+                <a href="ingress/Install.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="ambassador/">
+            
+                <a href="ambassador/">
+            
+                    
+                    Ambassador
             
                 </a>
             
@@ -261,10 +298,58 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="rbac">RBAC</h2>
-<p>Role-based access control (<a href="GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)">RBAC</a>)</p>
-<p><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">https://kubernetes.io/docs/reference/access-authn-authz/rbac/</a></p>
+<p>Role-based access control (<a href="GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a>)
+<a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">https://kubernetes.io/docs/reference/access-authn-authz/rbac/</a></p>
 <h2 id="tls">TLS</h2>
 <p>Transport-Level Security</p>
+<h2 id="sni">SNI</h2>
+<p>Server Name Indication (<a href="GLOSSARY.html#sni" class="glossary-term" title="Server Name Indication (SNI) is an extension to the TLS computer networking protocol by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process. This allows a server to present multiple certificates on the same IP address and TCP port number and hence allows multiple secure (HTTPS) websites (or any other service over TLS) to be served by the same IP address without requiring all those sites to use the same certificate. It is the conceptual equivalent to HTTP/1.1 name-based virtual hosting, but for HTTPS.">SNI</a>) is an extension to the <a href="GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">TLS</a> computer networking protocol by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process. This allows a server to present multiple certificates on the same IP address and TCP port number and hence allows multiple secure (HTTPS) websites (or any other <a href="GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> over <a href="GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">TLS</a>) to be served by the same IP address without requiring all those sites to use the same certificate. It is the conceptual equivalent to HTTP/1.1 name-based virtual hosting, but for HTTPS.</p>
+<h2 id="node">Node</h2>
+<p>A single virtual or physical machine in a Kubernetes <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a>.</p>
+<h2 id="cluster">Cluster</h2>
+<p>A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.</p>
+<h2 id="edge-router">Edge router</h2>
+<p>A router that enforces the firewall policy for your <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a>. This could be a gateway managed by a cloud provider or a physical piece of hardware.</p>
+<h2 id="cluster-network">Cluster network</h2>
+<p>A set of links, logical or physical, that facilitate communication within a <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a> according to the Kubernetes networking model.</p>
+<h2 id="service">Service</h2>
+<p>A Kubernetes <a href="GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">Service</a> that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a> network.</p>
+<h2 id="socat">socat</h2>
+<p><a href="GLOSSARY.html#socat" class="glossary-term" title="socat stands for SOcket CAT. It is a utility for data transfer between two addresses.">socat</a> stands for SOcket CAT. It is a utility for data transfer between two addresses.</p>
+<p>What makes <a href="GLOSSARY.html#socat" class="glossary-term" title="socat stands for SOcket CAT. It is a utility for data transfer between two addresses.">socat</a> so versatile is the fact that an address can represent a network socket, any file descriptor, a Unix domain datagram or stream socket, TCP and UDP (over both IPv4 and IPv6), SOCKS 4/4a over IPv4/IPv6, SCTP, PTY, datagram and stream sockets, named and unnamed pipes, raw IP sockets, OpenSSL, or on Linux even any arbitrary network device.</p>
+<h2 id="ingress">Ingress</h2>
+<p><a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> exposes HTTP and HTTPS routes from outside the <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a> to services within the <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a>. Traffic routing is controlled by rules defined on the <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> resource.
+An <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a <a href="GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> of type <a href="GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">Service</a>.Type=NodePort or <a href="GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">Service</a>.Type=LoadBalancer.
+<a href="https://kubernetes.io/docs/concepts/services-networking/ingress" target="_blank">https://kubernetes.io/docs/concepts/services-networking/ingress</a></p>
+<h2 id="ingress-controller">Ingress controller</h2>
+<p>An <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller is responsible for fulfilling the <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a>, usually with a loadbalancer, though it may also configure your <a href="GLOSSARY.html#edge-router" class="glossary-term" title="A router that enforces the firewall policy for your cluster. This could be a gateway managed by a cloud provider or a physical piece of hardware.">edge router</a> or additional frontends to help handle the traffic.
+In order for the <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> resource to work, the <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a> must have an <a href="GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller running. This is unlike other types of controllers, which run as part of the kube-controller-manager binary, and are typically started automatically with a <a href="GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a>.</p>
 
                                 
                                 </section>
@@ -300,7 +385,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"GLOSSARY.md","mtime":"2019-02-03T06:40:14.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-03T07:08:15.823Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"GLOSSARY.md","mtime":"2019-02-04T16:28:32.771Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -308,6 +393,10 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>

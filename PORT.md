@@ -11,3 +11,5 @@
 8080 - Kubeless
 
 8877:32023/TCP - Ambassador
+
+30400 - socat

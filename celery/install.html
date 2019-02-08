@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -153,19 +157,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../ambassador/">
-            
-                <a href="../ambassador/">
-            
-                    
-                    Ambassador
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
         
@@ -199,6 +190,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.3" data-path="../gitbook/flexible-alerts/">
+            
+                <a href="../gitbook/flexible-alerts/">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -212,6 +216,39 @@
             
                     
                     Retries | apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ingress</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../ingress/Install.html">
+            
+                <a href="../ingress/Install.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../ambassador/">
+            
+                <a href="../ambassador/">
+            
+                    
+                    Ambassador
             
                 </a>
             
@@ -377,7 +414,7 @@ LRANGE queue_name 0 10  # Redis client
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Celery","level":"2.1","depth":1,"next":{"title":"Certificate","level":"2.2","depth":1,"path":"certificate/understand.md","ref":"certificate/understand.md","articles":[{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"celery/install.md","mtime":"2019-02-03T06:40:14.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-03T07:08:15.823Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Celery","level":"2.1","depth":1,"next":{"title":"Certificate","level":"2.2","depth":1,"path":"certificate/understand.md","ref":"certificate/understand.md","articles":[{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"celery/install.md","mtime":"2019-02-03T07:08:28.993Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -385,6 +422,10 @@ LRANGE queue_name 0 10  # Redis client
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

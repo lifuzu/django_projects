@@ -8,3 +8,6 @@ static/
 _book/
 
 dump.rdb
+
+*.backup
+.terraform/

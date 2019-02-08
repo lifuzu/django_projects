@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -50,10 +54,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../mermaidjs/" />
     
-    
-    <link rel="prev" href="../certificate/understand.html" />
+    <link rel="prev" href="../ingress/Install.html" />
     
 
     
@@ -153,19 +155,6 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Ambassador
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
         
@@ -199,6 +188,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.3" data-path="../gitbook/flexible-alerts/">
+            
+                <a href="../gitbook/flexible-alerts/">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -212,6 +214,39 @@
             
                     
                     Retries | apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ingress</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../ingress/Install.html">
+            
+                <a href="../ingress/Install.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Ambassador
             
                 </a>
             
@@ -267,8 +302,11 @@
                                 <h2 id="to-deploy-ambassador-in-your-default-namespace-first-you-need-to-check-if-kubernetes-has-rbac-enabled">To deploy Ambassador in your default namespace, first you need to check if Kubernetes has RBAC enabled:</h2>
 <pre><code>$ kubectl cluster-info dump --namespace kube-system | grep authorization-mode
                             &quot;--authorization-mode=Node,RBAC&quot;,
-</code></pre><p>If you see something like --authorization-mode=Node,<a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)">RBAC</a> in the output, then <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)">RBAC</a> is enabled.</p>
-<p>If <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)">RBAC</a> is enabled:</p>
+</code></pre><p>If you see something like --authorization-mode=<a href="../GLOSSARY.html#node" class="glossary-term" title="A single virtual or physical machine in a Kubernetes cluster.">Node</a>,<a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a> in the output, then <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a> is enabled.</p>
+<p>If <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a> is enabled:</p>
 <pre><code>$ curl -s https://www.getambassador.io/yaml/ambassador/ambassador-rbac.yaml -o tools/provision/ambassador/rbac.yaml
 $ kubectl apply -f tools/provision/ambassador/rbac.yaml
 service/ambassador-admin created
@@ -276,7 +314,8 @@ clusterrole.rbac.authorization.k8s.io/ambassador created
 serviceaccount/ambassador created
 clusterrolebinding.rbac.authorization.k8s.io/ambassador created
 deployment.extensions/ambassador created
-</code></pre><p>Without <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)">RBAC</a>, you can use:</p>
+</code></pre><p>Without <a href="../GLOSSARY.html#rbac" class="glossary-term" title="Role-based access control (RBAC)
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a>, you can use:</p>
 <pre><code>$ curl -s https://www.getambassador.io/yaml/ambassador/ambassador-no-rbac.yaml -o tools/provision/ambassador/no-rbac.yaml
 kubectl apply -f tools/provision/ambassador/no-rbac.yaml
 ...
@@ -293,10 +332,10 @@ spec:
    - port: 80
   selector:
     service: ambassador
-</code></pre><p>Then, deploy this service</p>
+</code></pre><p>Then, deploy this <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a></p>
 <pre><code>$ kubectl apply -f tools/provision/ambassador/service.yaml
 service/ambassador created
-</code></pre><p>The YAML above creates a Kubernetes service for Ambassador of type LoadBalancer, and configures the externalTrafficPolicy to propagate the original source IP of the client. All HTTP traffic will be evaluated against the routing rules you create.</p>
+</code></pre><p>The YAML above creates a Kubernetes <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> for Ambassador of type LoadBalancer, and configures the externalTrafficPolicy to propagate the original source IP of the client. All HTTP traffic will be evaluated against the routing rules you create.</p>
 <h2 id="creating-a-route">Creating a route</h2>
 <p>Create the following YAML and put it in a file called tools/deployment/k8s/route/httpbin.yaml:</p>
 <pre><code>---
@@ -320,8 +359,8 @@ spec:
 </code></pre><p>Then, apply it to the Kubernetes with kubectl:</p>
 <pre><code>$ kubectl apply -f tools/deployment/k8s/route/httpbin.yaml
 service/httpbin created
-</code></pre><p>When the service is deployed, Ambassador will notice the <code>getambassador.io/config</code> annotation on the service, and use the <code>Mapping</code> contained in it to configure the route. (Note that Ambassador only looks at annotations on Kubernetes Services.)</p>
-<p>In this case, the mapping creates a route that will route traffic from the <code>/httpbin/</code> endpoint to the public <code>httpbin.org</code> service. Note that we are using the <code>host_rewrite</code> attribute for the <code>httpbin_mapping</code> &#x2014; this forces the HTTP Host header, and is often a good idea when mapping to external services. Ambassador supports many different configuration options.
+</code></pre><p>When the <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> is deployed, Ambassador will notice the <code>getambassador.io/config</code> annotation on the <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a>, and use the <code>Mapping</code> contained in it to configure the route. (Note that Ambassador only looks at annotations on Kubernetes Services.)</p>
+<p>In this case, the mapping creates a route that will route traffic from the <code>/httpbin/</code> endpoint to the public <code>httpbin.org</code> <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a>. Note that we are using the <code>host_rewrite</code> attribute for the <code>httpbin_mapping</code> &#x2014; this forces the HTTP Host header, and is often a good idea when mapping to external services. Ambassador supports many different configuration options.
 <a href="https://www.getambassador.io/reference/configuration/" target="_blank">https://www.getambassador.io/reference/configuration/</a></p>
 <h2 id="testing-the-mapping">Testing the Mapping</h2>
 <p>We&apos;ll need the external IP for Ambassador (it might take some time for this to be available):</p>
@@ -342,14 +381,14 @@ ambassador   10.11.12.13     35.36.37.38     80:31656/TCP   1m
 ...
 $ curl http://192.168.99.105:31696/httpbin/
 </code></pre><h2 id="adding-a-service-route-simply-by-deploying-it-with-an-appropriate-ambassador-annotation">Adding a Service route simply by deploying it with an appropriate Ambassador annotation</h2>
-<p>For example, we can deploy the QoTM service locally in this cluster, and automatically map it through Ambassador by creating <code>tools/deployment/k8s/services/qotm.yaml</code>, then applying it with:</p>
+<p>For example, we can deploy the QoTM <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> locally in this <a href="../GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a>, and automatically map it through Ambassador by creating <code>tools/deployment/k8s/services/qotm.yaml</code>, then applying it with:</p>
 <pre><code>$ kubectl apply -f tools/deployment/k8s/services/qotm.yaml
 service/qotm created
 deployment.extensions/qotm created
-</code></pre><p>A few seconds after the QoTM service is running, Ambassador should be configured for it. Try it with</p>
+</code></pre><p>A few seconds after the QoTM <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> is running, Ambassador should be configured for it. Try it with</p>
 <pre><code>$ curl http://192.168.99.105:31696/qotm/
 </code></pre><h2 id="the-diagnostics-service-in-kubernetes">The Diagnostics Service in Kubernetes</h2>
-<p>Ambassador includes an integrated diagnostics service to help with troubleshooting. By default, this is not exposed to the Internet. To view it, we&apos;ll need to get the name of one of the Ambassador pods:</p>
+<p>Ambassador includes an integrated diagnostics <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> to help with troubleshooting. By default, this is not exposed to the Internet. To view it, we&apos;ll need to get the name of one of the Ambassador pods:</p>
 <pre><code>$ kubectl get pods
 NAME                          READY   STATUS    RESTARTS   AGE
 ambassador-5bf995dd7f-bjbfd   1/1     Running   2          10h
@@ -385,14 +424,10 @@ ambassador-5bf995dd7f-x8prv   1/1     Running   2          10h
 
             
                 
-                <a href="../certificate/understand.html#self-signed" class="navigation navigation-prev " aria-label="Previous page: Self signed certificate">
+                <a href="../ingress/Install.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Ingress">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../mermaidjs/" class="navigation navigation-next " aria-label="Next page: Mermaidjs">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -401,7 +436,7 @@ ambassador-5bf995dd7f-x8prv   1/1     Running   2          10h
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ambassador","level":"2.3","depth":1,"next":{"title":"Mermaidjs","level":"3.1","depth":1,"path":"mermaidjs/README.md","ref":"mermaidjs/README.md","articles":[]},"previous":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ambassador/README.md","mtime":"2019-02-03T06:40:14.214Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-03T07:08:15.823Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ambassador","level":"5.2","depth":1,"previous":{"title":"Ingress","level":"5.1","depth":1,"path":"ingress/Install.md","ref":"ingress/Install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ambassador/README.md","mtime":"2019-02-03T07:08:28.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -409,6 +444,10 @@ ambassador-5bf995dd7f-x8prv   1/1     Running   2          10h
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

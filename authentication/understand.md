@@ -5,3 +5,5 @@
 ## ACL
 ## HMAC Authentication
 ## LDAP Authentication
+
+https://kubeless.io/docs/http-triggers/

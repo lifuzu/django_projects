@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>C3 Chart · GitBook</title>
+        <title>Alerts · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -54,10 +54,10 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../flexible-alerts/" />
+    <link rel="next" href="../../projects/retries/apps.html" />
     
     
-    <link rel="prev" href="../../mermaidjs/" />
+    <link rel="prev" href="../chart/" />
     
 
     
@@ -177,9 +177,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="./">
+        <li class="chapter " data-level="3.2" data-path="../chart/">
             
-                <a href="./">
+                <a href="../chart/">
             
                     
                     C3 Chart
@@ -190,9 +190,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../flexible-alerts/">
+        <li class="chapter active" data-level="3.3" data-path="./">
             
-                <a href="../flexible-alerts/">
+                <a href="./">
             
                     
                     Alerts
@@ -286,7 +286,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >C3 Chart</a>
+        <a href="../.." >Alerts</a>
     </h1>
 </div>
 
@@ -301,43 +301,76 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduce-c3js-or-highcharts-chart-library">Introduce C3.js or Highcharts chart library</h1>
-<p><a href="https://github.com/csbun/gitbook-plugin-chart" target="_blank">https://github.com/csbun/gitbook-plugin-chart</a></p>
-<h3 id="setting-up-mermaid-in-bookjson">Setting up mermaid in book.json</h3>
+                                <h1 id="introduce-flexible-alerts">Introduce flexible alerts</h1>
+<p><a href="https://www.npmjs.com/package/gitbook-plugin-flexible-alerts" target="_blank">https://www.npmjs.com/package/gitbook-plugin-flexible-alerts</a></p>
+<h3 id="setting-up-in-bookjson">Setting up in book.json</h3>
 <pre><code>{
-  &quot;plugins&quot;: [ &quot;chart&quot; ],
+  &quot;plugins&quot;: [
+    &quot;flexible-alerts&quot;
+  ],
   &quot;pluginsConfig&quot;: {
-      &quot;chart&quot;: {
-          &quot;type&quot;: &quot;c3&quot;
+    &quot;flexible-alerts&quot;: {
+      &quot;style&quot;: &quot;flat&quot;,
+      &quot;note&quot;: {
+        &quot;label&quot;: {
+          &quot;de&quot;: &quot;Hinweis&quot;,
+          &quot;en&quot;: &quot;Note&quot;
+        }
+      },
+      &quot;tip&quot;: {
+        &quot;label&quot;: {
+          &quot;de&quot;: &quot;Tipp&quot;,
+          &quot;en&quot;: &quot;Tip&quot;
+        }
+      },
+      &quot;warning&quot;: {
+        &quot;label&quot;: {
+          &quot;de&quot;: &quot;Warnung&quot;,
+          &quot;en&quot;: &quot;Warning&quot;
+        }
+      },
+      &quot;danger&quot;: {
+        &quot;label&quot;: {
+          &quot;de&quot;: &quot;Achtung&quot;,
+          &quot;en&quot;: &quot;Attention&quot;
+        }
+      },
+      &quot;comment&quot;: {
+        &quot;label&quot;: &quot;Comment&quot;,
+        &quot;icon&quot;: &quot;fa fa-comments&quot;,
+        &quot;className&quot;: &quot;info&quot;
       }
+    }
   }
 }
-</code></pre><p><code>type</code> can be <code>c3</code> or <code>highcharts</code>, default to <code>c3</code>.</p>
-<h3 id="example-for-c3js">Example for C3.js</h3>
-<p><div>
-                    <div id="plugin-chart-1"></div>
-                    <script>c3.generate({"bindto":"#plugin-chart-1",
-    "data": {
-        "type": "bar",
-        "columns": [
-            ["data1", 30, 200, 100, 400, 150, 1500, 2500],
-            ["data2", 50, 100, 300, 450, 650, 250, 1320]
-        ]
-    },
-    "axis": {
-        "y": {
-            "tick": {
-                "format": d3.format("$,")
-            }
-        }
-    }
-});</script>
-                </div></p>
-<h3 id="example-for-c3js-in-yaml">Example for C3.js in YAML</h3>
-<p><div>
-                    <div id="plugin-chart-2"></div>
-                    <script>c3.generate({"bindto":"#plugin-chart-2","data":{"type":"bar","columns":[["data1",30,200,100,400,150,250],["data2",50,20,10,40,15,25]],"axes":{"data2":"y2"}},"axis":{"y2":{"show":true}}});</script>
-                </div></p>
+</code></pre><h3 id="install-the-plugin">Install the plugin</h3>
+<pre><code>$ gitbook install
+# then
+$ gitbook build
+# OR
+$ gitbook serve
+</code></pre><h3 id="examples">Examples</h3>
+<p>An example to display NOTE</p>
+<blockquote>
+<p>[!NOTE]
+An alert of type &apos;note&apos; using global style &apos;flat&apos;.</p>
+</blockquote>
+<p>Display NOTE but callout style</p>
+<blockquote>
+<p>[!NOTE|style:callout]
+An alert of type &apos;note&apos; using alert specific style &apos;callout&apos; which overrides global style &apos;flat&apos;.</p>
+</blockquote>
+<p>Display TIP with custom label</p>
+<blockquote>
+<p>[!TIP|style:flat|label:My own heading|iconVisibility:false]
+An alert of type &apos;tip&apos; using alert specific style &apos;flat&apos; which overrides global style &apos;callout&apos;.
+In addition, this alert uses an own heading and hides specific icon.</p>
+</blockquote>
+<p>Display custom type <code>COMMENT</code></p>
+<blockquote>
+<p>[!COMMENT]
+An alert of type &apos;comment&apos; using style &apos;callout&apos; with default settings.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -365,12 +398,12 @@
 
             
                 
-                <a href="../../mermaidjs/" class="navigation navigation-prev " aria-label="Previous page: Mermaidjs">
+                <a href="../chart/" class="navigation navigation-prev " aria-label="Previous page: C3 Chart">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../flexible-alerts/" class="navigation navigation-next " aria-label="Next page: Alerts">
+                <a href="../../projects/retries/apps.html" class="navigation navigation-next " aria-label="Next page: Retries | apps">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -381,7 +414,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"C3 Chart","level":"3.2","depth":1,"next":{"title":"Alerts","level":"3.3","depth":1,"path":"gitbook/flexible-alerts/README.md","ref":"gitbook/flexible-alerts/README.md","articles":[]},"previous":{"title":"Mermaidjs","level":"3.1","depth":1,"path":"mermaidjs/README.md","ref":"mermaidjs/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"gitbook/chart/README.md","mtime":"2019-02-03T07:08:28.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Alerts","level":"3.3","depth":1,"next":{"title":"Retries | apps","level":"4.1","depth":1,"path":"projects/retries/apps.md","ref":"projects/retries/apps.md","articles":[]},"previous":{"title":"C3 Chart","level":"3.2","depth":1,"path":"gitbook/chart/README.md","ref":"gitbook/chart/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"gitbook/flexible-alerts/README.md","mtime":"2019-02-08T06:58:09.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -153,19 +157,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../ambassador/">
-            
-                <a href="../ambassador/">
-            
-                    
-                    Ambassador
-            
-                </a>
-            
-
-            
-        </li>
-    
 
     
         
@@ -199,6 +190,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.3" data-path="../gitbook/flexible-alerts/">
+            
+                <a href="../gitbook/flexible-alerts/">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -212,6 +216,39 @@
             
                     
                     Retries | apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ingress</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../ingress/Install.html">
+            
+                <a href="../ingress/Install.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../ambassador/">
+            
+                <a href="../ambassador/">
+            
+                    
+                    Ambassador
             
                 </a>
             
@@ -268,7 +305,10 @@
 <p><a href="https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html" target="_blank">https://cert-manager.readthedocs.io/en/latest/tutorials/quick-start/index.html</a></p>
 <p>When you have running cert-manager, you can deploy function and create an HTTP trigger with flag --enableTLSAcme enabled as below:</p>
 <pre><code>$ kubeless trigger http create get-python --function-name get-python --path get-python --enableTLSAcme
-</code></pre><p>Running the above command, Kubeless will automatically create a ingress object with annotation kubernetes.io/<a href="../GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">tls</a>-acme: &apos;true&apos; set which will be used by cert-manager to configure the service certificate.</p>
+</code></pre><p>Running the above command, Kubeless will automatically create a <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> object with annotation kubernetes.io/<a href="../GLOSSARY.html#tls" class="glossary-term" title="Transport-Level Security">tls</a>-acme: &apos;true&apos; set which will be used by cert-manager to configure the <a href="../GLOSSARY.html#service" class="glossary-term" title="A Kubernetes Service that identifies a set of pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.">service</a> certificate.</p>
 <h2 id="self-signed">Self-signed certificate </h2>
 <p>Via command <code>openssl</code>:</p>
 <pre><code>$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tools/certs/kubeless.key -out tools/certs/kubeless.crt -subj &quot;/CN=rili.local.com&quot;
@@ -338,7 +378,10 @@ INFO[0000] HTTP trigger hello created in namespace default successfully!
 INFO[0000] HTTP trigger hello deleted from namespace default successfully!
 </code></pre><p>If running on Minikube, need to config hosts with Minikube IP address</p>
 <pre><code>$ echo &quot;$(minikube ip) rili.local.com&quot; | sudo tee -a /etc/hosts
-</code></pre><p>Once the Ingress rule has been deployed you can verify that the function is accessible trough HTTPS:</p>
+</code></pre><p>Once the <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> rule has been deployed you can verify that the function is accessible trough HTTPS:</p>
 <pre><code>$ kubectl get ingress
 NAME    HOSTS            ADDRESS     PORTS     AGE
 hello   rili.local.com   10.0.2.15   80, 443   78s
@@ -399,7 +442,7 @@ $ curl --data &apos;{&quot;Another&quot;: &quot;Echo&quot;}&apos; -k https://ril
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Certificate","level":"2.2","depth":1,"next":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"previous":{"title":"Celery","level":"2.1","depth":1,"path":"celery/install.md","ref":"celery/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"chart":{"type":"c3"},"mermaid-flow":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"certificate/understand.md","mtime":"2019-02-03T06:40:14.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-03T07:08:15.823Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Certificate","level":"2.2","depth":1,"next":{"title":"Self signed certificate","level":"2.2.1","depth":2,"anchor":"#self-signed","path":"certificate/understand.md","ref":"certificate/understand.md#self-signed","articles":[]},"previous":{"title":"Celery","level":"2.1","depth":1,"path":"celery/install.md","ref":"celery/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"certificate/understand.md","mtime":"2019-02-03T07:08:28.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -407,6 +450,10 @@ $ curl --data &apos;{&quot;Another&quot;: &quot;Echo&quot;}&apos; -k https://ril
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

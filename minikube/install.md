@@ -113,6 +113,39 @@ $ minikube start --extra-config=apiserver.authorization-mode=RBAC
 $ kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
 ```
 
+### Clear out Minikube
+```
+$ minikube stop; minikube delete; sudo rm -rf ~/.minikube; sudo rm -rf ~/.kub
+```
+
+### Inspect the pods in the cluster
+```
+$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                                           READY   STATUS    RESTARTS   AGE
+default       ambassador-5bf995dd7f-bjbfd                    0/1     Running   2          33h
+default       ambassador-5bf995dd7f-tz7fj                    1/1     Running   2          33h
+default       ambassador-5bf995dd7f-x8prv                    0/1     Running   3          33h
+default       consul-0                                       1/1     Running   5          4d23h
+default       consul-1                                       1/1     Running   5          4d23h
+default       consul-2                                       1/1     Running   5          4d23h
+default       hello-779487cc4d-wszpw                         1/1     Running   3          3d23h
+default       qotm-7c6cccd985-pppq7                          1/1     Running   0          22h
+default       vault-69c7d8bcdd-l4hgl                         2/2     Running   10         4d22h
+kube-system   coredns-86c58d9df4-sv4vk                       1/1     Running   5          5d
+kube-system   coredns-86c58d9df4-x5wvk                       1/1     Running   5          5d
+kube-system   default-http-backend-5ff9d456ff-wnpzl          1/1     Running   2          3d23h
+kube-system   etcd-minikube                                  1/1     Running   0          22h
+kube-system   kube-addon-manager-minikube                    1/1     Running   5          4d23h
+kube-system   kube-apiserver-minikube                        1/1     Running   0          22h
+kube-system   kube-controller-manager-minikube               1/1     Running   5          4d23h
+kube-system   kube-proxy-pzk99                               1/1     Running   0          22h
+kube-system   kube-scheduler-minikube                        1/1     Running   5          4d23h
+kube-system   kubernetes-dashboard-ccc79bfc9-6rsj2           1/1     Running   15         4d23h
+kube-system   nginx-ingress-controller-7c66d668b-zqbzf       1/1     Running   6          3d23h
+kube-system   storage-provisioner                            1/1     Running   15         5d
+kubeless      kubeless-controller-manager-7c7bcb8db4-fxzb8   3/3     Running   27         3d23h
+```
+
 ### References
 https://kubernetes.io/docs/setup/minikube/
 https://github.com/kubernetes/minikube#quickstart

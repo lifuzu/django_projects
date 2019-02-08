@@ -1,0 +1,473 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Ingress · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../gitbook.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../ambassador/" />
+    
+    
+    <link rel="prev" href="../projects/retries/apps.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../celery/install.html">
+            
+                <a href="../celery/install.html">
+            
+                    
+                    Celery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../certificate/understand.html">
+            
+                <a href="../certificate/understand.html">
+            
+                    
+                    Certificate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../certificate/understand.html">
+            
+                <a href="../certificate/understand.html#self-signed">
+            
+                    
+                    Self signed certificate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Playground</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../mermaidjs/">
+            
+                <a href="../mermaidjs/">
+            
+                    
+                    Mermaidjs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../gitbook/chart/">
+            
+                <a href="../gitbook/chart/">
+            
+                    
+                    C3 Chart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../gitbook/flexible-alerts/">
+            
+                <a href="../gitbook/flexible-alerts/">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Project Modules</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../projects/retries/apps.html">
+            
+                <a href="../projects/retries/apps.html">
+            
+                    
+                    Retries | apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ingress</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="Install.html">
+            
+                <a href="Install.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../ambassador/">
+            
+                <a href="../ambassador/">
+            
+                    
+                    Ambassador
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Ingress</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ingress-controller">Ingress controller</h1>
+<p><a href="https://kubernetes.io/docs/concepts/services-networking/ingress" target="_blank">https://kubernetes.io/docs/concepts/services-networking/ingress</a></p>
+<h3 id="minikube-ingress-addon">Minikube Ingress addon</h3>
+<p>If your <a href="../GLOSSARY.html#cluster" class="glossary-term" title="A group of nodes firewalled from the internet, that are the primary compute resources managed by Kubernetes.">cluster</a> is running in Minikube you can enable the <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> controller just executing:</p>
+<pre><code>$ minikube addons enable ingress
+ingress was successfully enabled
+</code></pre><p>After a couple of minutes you should be able to see the controller running in the kube-system namespace:</p>
+<pre><code>$ kubectl get pod -n kube-system -l app.kubernetes.io/name
+NAME                                       READY   STATUS    RESTARTS   AGE
+default-http-backend-5ff9d456ff-wnpzl      1/1     Running   0          10m
+nginx-ingress-controller-7c66d668b-zqbzf   1/1     Running   0          10m
+</code></pre><h3 id="nginx-ingress">Nginx Ingress</h3>
+<p><a href="https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md" target="_blank">https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md</a></p>
+<h3 id="kong-ingress">Kong Ingress</h3>
+<p><a href="https://github.com/Kong/kubernetes-ingress-controller/tree/master/docs/deployment" target="_blank">https://github.com/Kong/kubernetes-ingress-controller/tree/master/docs/deployment</a></p>
+<pre><code>$ kubectl get pods -n kong
+NAME                                       READY     STATUS    RESTARTS   AGE
+kong-56c4cc55c9-78srh                      1/1       Running   0          1h
+kong-ingress-controller-79f48dd4d7-ql4vw   2/2       Running   0          1h
+postgres-0                                 1/1       Running   1          22h
+</code></pre><h3 id="traefik-ingress">Traefik Ingress</h3>
+<p><a href="https://docs.traefik.io/user-guide/kubernetes/" target="_blank">https://docs.traefik.io/user-guide/kubernetes/</a></p>
+<pre><code>$ kubectl get pod -n kube-system -l name=traefik-ingress-lb
+NAME                                          READY     STATUS    RESTARTS   AGE
+traefik-ingress-controller-57b4767f99-g42n2   1/1       Running   0          1m
+</code></pre><h3 id="haproxy-ingress">HAProxy Ingress</h3>
+<p><a href="https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/" target="_blank">https://www.haproxy.com/blog/haproxy_ingress_controller_for_kubernetes/</a></p>
+<h3 id="ambassadorenvoy-ingress">Ambassador/Envoy Ingress</h3>
+<p><a href="../ambassador/">Ambassador</a></p>
+<h2 id="ingress-controllers">Ingress controllers</h2>
+<ul>
+<li>Kubernetes as a project currently supports and maintains GCE and nginx controllers.</li>
+<li>Contour is an Envoy based <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller provided and supported by Heptio.</li>
+<li>Citrix provides an <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> Controller for its hardware (MPX), virtualized (VPX) and free containerized (CPX) ADC for baremetal and cloud deployments.</li>
+<li>F5 Networks provides support and maintenance for the F5 BIG-IP Controller for Kubernetes.</li>
+<li>Gloo is an open-source <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller based on Envoy which offers API Gateway functionality with enterprise support from solo.io.</li>
+<li>HAProxy based <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller jcmoraisjr/haproxy-<a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> which is mentioned on the blog post HAProxy <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> Controller for Kubernetes. HAProxy Technologies offers support and maintenance for HAProxy Enterprise and the <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller jcmoraisjr/haproxy-<a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a>.</li>
+<li>Istio based <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller Control <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> Traffic.</li>
+<li>Kong offers community or commercial support and maintenance for the Kong <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> Controller for Kubernetes.</li>
+<li>NGINX, Inc. offers support and maintenance for the NGINX <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">Ingress</a> Controller for Kubernetes.</li>
+<li>Traefik is a fully featured <a href="../GLOSSARY.html#ingress" class="glossary-term" title="Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting.
+An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+https://kubernetes.io/docs/concepts/services-networking/ingress">ingress</a> controller (Let&#x2019;s Encrypt, secrets, http2, websocket), and it also comes with commercial support by Containous.</li>
+</ul>
+<h2 id="multiple-ingress-controllers">Multiple Ingress controllers</h2>
+<p><a href="https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/multiple-ingress.md" target="_blank">https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/multiple-ingress.md</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../projects/retries/apps.html" class="navigation navigation-prev " aria-label="Previous page: Retries | apps">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../ambassador/" class="navigation navigation-next " aria-label="Next page: Ambassador">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Ingress","level":"5.1","depth":1,"next":{"title":"Ambassador","level":"5.2","depth":1,"path":"ambassador/README.md","ref":"ambassador/README.md","articles":[]},"previous":{"title":"Retries | apps","level":"4.1","depth":1,"path":"projects/retries/apps.md","ref":"projects/retries/apps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid-flow","chart","flexible-alerts"],"root":"./docs","styles":{"website":"gitbook.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-flow":{},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"flat","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"},"comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ingress/Install.md","mtime":"2019-02-03T20:05:26.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-08T06:59:15.531Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

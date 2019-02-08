@@ -1,4 +1,5 @@
 ### Install Consul client
+https://testdriven.io/blog/running-vault-and-consul-on-kubernetes/
 
 ```
 $ brew install consul
@@ -143,3 +144,22 @@ consul-2  172.17.0.7:8301  alive   server  1.4.0  2         dc1  <all>
 ```
 Finally, you should be able to access the web interface at http://localhost:8500.
 
+
+Then, clean up:
+```
+$ kubectl delete \
+    -f tools/provision/consul/service.yaml \
+    -f tools/provision/consul/statefulset.yaml
+```
+
+List Consul pods:
+```
+$ kubectl get pods -l app=consul
+NAME                     READY   STATUS    RESTARTS   AGE
+...
+```
+
+Delete Vault pods:
+```
+$ kubectl delete pods -l app=consul
+```
