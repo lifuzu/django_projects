@@ -3,10 +3,22 @@
     "styles": {
         "website": "gitbook.css"
     },
-    "plugins": ["mermaid-flow", "chart"],
+    "plugins": [
+        "mermaid-flow",
+        "chart",
+        "flexible-alerts"
+    ],
     "pluginsConfig": {
         "chart": {
             "type": "c3"
+        },
+        "flexible-alerts": {
+            "style": "flat",
+            "comment": {
+                "label": "Comment",
+                "icon": "fa fa-comments",
+                "className": "info"
+            }
         }
     }
 }

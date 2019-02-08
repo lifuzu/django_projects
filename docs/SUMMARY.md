@@ -15,6 +15,8 @@
 
 * [C3 Chart](gitbook/chart/README.md)
 
+* [Alerts](gitbook/flexible-alerts/README.md)
+
 ### Project Modules
 
 * [Retries | apps](projects/retries/apps.md)
