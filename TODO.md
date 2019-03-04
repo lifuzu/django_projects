@@ -69,6 +69,11 @@
 
  - [ ] Vue/Django - https://eldarion.com/blog/2018/10/09/setup-guide-django-vue-webpack/
 
+ - [ ] Gatsbyjs
+ - [ ] npx
+ - [ ] PostGraphile - graphile.org
+ - [ ] API blueprint - apiblueprint.org
+
 ### TODO: Create deploy USER and deployemnt HOME
 ```
 $ DEPLOY_USER=deploy

@@ -1,0 +1,58 @@
+https://www.rabbitmq.com/install-homebrew.html
+
+$ brew install rabbitmq
+==> Installing dependencies for rabbitmq: libpng, libtiff and erlang
+==> Installing rabbitmq dependency: libpng
+==> Downloading https://homebrew.bintray.com/bottles/libpng-1.6.36.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libpng-1.6.36.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libpng/1.6.36: 27 files, 1.2MB
+==> Installing rabbitmq dependency: libtiff
+==> Downloading https://homebrew.bintray.com/bottles/libtiff-4.0.10_1.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libtiff-4.0.10_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/libtiff/4.0.10_1: 246 files, 3.5MB
+==> Installing rabbitmq dependency: erlang
+==> Downloading https://homebrew.bintray.com/bottles/erlang-21.2.4.mojave.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring erlang-21.2.4.mojave.bottle.tar.gz
+==> Caveats
+Man pages can be found in:
+  /usr/local/opt/erlang/lib/erlang/man
+
+Access them with `erl -man`, or add this directory to MANPATH.
+==> Summary
+🍺  /usr/local/Cellar/erlang/21.2.4: 5,684 files, 272.5MB
+==> Installing rabbitmq
+==> Downloading https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.12/rabbitmq-server-generic-
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws.com/924551/48b04b00-3118-11e9
+######################################################################## 100.0%
+==> /usr/bin/unzip -qq -j /usr/local/Cellar/rabbitmq/3.7.12/plugins/rabbitmq_management-3.7.12.ez rabbitmq_man
+==> Caveats
+Management Plugin enabled by default at http://localhost:15672
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+To have launchd start rabbitmq now and restart at login:
+  brew services start rabbitmq
+Or, if you don't want/need a background service you can just run:
+  rabbitmq-server
+==> Summary
+🍺  /usr/local/Cellar/rabbitmq/3.7.12: 236 files, 13.8MB, built in 8 seconds
+==> Caveats
+==> erlang
+Man pages can be found in:
+  /usr/local/opt/erlang/lib/erlang/man
+
+Access them with `erl -man`, or add this directory to MANPATH.
+==> rabbitmq
+Management Plugin enabled by default at http://localhost:15672
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+To have launchd start rabbitmq now and restart at login:
+  brew services start rabbitmq
+Or, if you don't want/need a background service you can just run:
+  rabbitmq-server
