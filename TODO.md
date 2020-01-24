@@ -74,6 +74,8 @@
  - [ ] PostGraphile - graphile.org
  - [ ] API blueprint - apiblueprint.org
 
+ - [ ] Graphene-Django - https://graphene-python.org
+
 ### TODO: Create deploy USER and deployemnt HOME
 ```
 $ DEPLOY_USER=deploy

@@ -15,9 +15,6 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 
-
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -57,6 +54,10 @@ INSTALLED_APPS = [
     'frontend',
     'retries',
     'upload',
+
+    # graphql framework
+    'graphene_django',
+    'ingredients'
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/mediafiles/'
 MEDIA_ROOT = os.path.join(os.getenv("MEDIA_HOME"), 'mediafiles')
+
+# GraphQL
+GRAPHENE = {
+    'SCHEMA': 'schema.schema'
+}
